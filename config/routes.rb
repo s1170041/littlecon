@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :contacts
+  resources :pages
+  resources :favorites
+  resources :notices
+  resources :parties
   devise_for :users
   get 'top/index'
 
