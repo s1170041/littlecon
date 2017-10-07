@@ -63,13 +63,20 @@ class PartiesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_party
-      @party = Party.find(params[:id])
-    end
+  def set_party
+    @party = Party.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def party_params
-      params.fetch(:party, {})
-    end
+  def party_params
+    params.require(:party).permit(:venue, 
+      :prefecture,
+      :city,
+      :male_fee,
+      :women_fee,
+      :max_age,
+      :min_age,
+      :max_participant_count,
+      :open_time,
+      )
+  end
 end
