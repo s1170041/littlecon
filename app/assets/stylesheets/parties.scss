@@ -1,3 +1,16 @@
 // Place all the styles related to the parties controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#paties-index {
+	.paties-list {
+		li {
+			width: 600px;
+			height: 300px;
+			margin: 0 auto 8px;
+			position: relative;
+			border: solid 2px #ddd;
+		}
+	}
+}
