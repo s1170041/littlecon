@@ -1,58 +1,65 @@
 <%= form_with(model: party, local: true) do |form| %>
 		
+	<ul id="party-form">
+		<li>
+			<div class="title">タイトル</div>
+			<%= form.text_field :title %>
+		</li>
+
+		<li>
+			<div class="title">開催場所</div>
+
+			<%= form.text_field :venue %>
+		</li>
+
+		<li>
+			<div class="title">開催場所の住所</div>
+
+			<%= form.text_field :venue_address %>
+		</li>
+		<li>
+			<div class="title">県</div>
+
+			<%= form.text_field :prefecture %>
+		</li>
+		<li>
+			<div class="title">市</div>
+
+			<%= form.text_field :city %>
+		</li>
+
+		<li>
+			<div class="title">男性料金</div>
+
+			<%= form.text_field :male_fee %>
+		</li>
+		<li>
+			<div class="title">女性料金</div>
+
+			<%= form.text_field :women_fee %>
+		</li>
+
+		<li>
+			<div class="title">男性の最高年齢</div>
+
+			<%= form.text_field :max_age_man %>
+		</li>
+		<li>
+			<div class="title">男性の最小年齢</div>
+
+			<%= form.text_field :min_age_man %>
+		</li>
 		
-		
-		
-		
-		
-		max_age_man
-		min_age_man
-		max_age_women
-		min_age_women
-
-		max_participant_count
-		open_time
-		deleted
-
-
-
-	<ul>
 		<li>
-			タイトル<%= form.text_field :title %>
+			<div class="title">女性の最高年齢</div>
+
+			<%= form.text_field :max_age_women %>
+		</li>
+		<li>
+			<div class="title">女性の最小年齢</div>
+			<%= form.text_field :min_age_women %>
 		</li>
 
-		<li>
-			開催場所<%= form.text_field :venue %>
-		</li>
-
-		<li>
-			開催場所の住所<%= form.text_field :venue_address %>
-		</li>
-		<li>
-			県<%= form.text_field :prefecture %>
-		</li>
-		<li>
-			県<%= form.text_field :city %>
-		</li>
-		<li>
-			男性料金<%= man_fee %>
-		</li>
-		<li>
-			女性料金<%= women_fee %>
-		</li>
-		<li>
-			女性の最高年齢
-		</li>
-		<li>
-			女性の最小年齢
-		</li>
-
-		<li>
-			男性の最高年齢
-		</li>
-		<li>
-			男性の最小年齢
-		</li>
 
 	</ul>
 

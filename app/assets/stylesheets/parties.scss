@@ -42,7 +42,17 @@
 			position: relative;
 			bottom: 3px;
 		}
-		
-
 	}
 }
+#paties-new, #paties-edit {
+	ul#party-form {
+		li {
+			margin-bottom: 8px;
+		}
+		.title {
+			display: inline-block;
+			width: 150px;
+		}
+	}
+}
+
