@@ -10,7 +10,39 @@
 			height: 300px;
 			margin: 0 auto 8px;
 			position: relative;
-			border: solid 2px #ddd;
+			border-left: solid 2px #ddd;
+			border-right: solid 2px #ddd;
 		}
+	}
+
+	#search-party {
+		width: 750px;
+		margin: 0 auto;
+		border: 1px solid #ddd;
+		border-radius: 2px;
+		
+		ul.search-party-list {
+			li {
+				padding: 14px 6px;
+				border-bottom: 1px solid #ddd;
+			}
+		}
+
+		.title {
+			background: #F0EACF;
+			padding: 8px;
+
+			.icon-search {
+				width: 20px;
+				display: inline-block;			
+			}
+		}
+		h3 {
+			display: inline-block;
+			position: relative;
+			bottom: 3px;
+		}
+		
+
 	}
 }

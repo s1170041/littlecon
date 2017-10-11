@@ -3,6 +3,37 @@
 <div id="paties-index">
 	<div class="container">
 		<%= link_to 'New Party', new_party_path %>
+		
+		<!-- 検索機能 -->
+		<section id="search-party">
+			<div class="title">
+				<img class="icon-search" src="<%= image_path 'sample/icon_search.png' %>">
+				<h3>スケジュールを検索</h3>
+			</div>
+
+
+			<ul class="search-party-list">
+				<li class="event-date">
+					<h4>開催日</h4>
+				</li>
+
+				<li class="place">
+					<h4>場所</h4>
+
+				</li>
+
+				<li class="participant-count">
+					<h4>人数</h4>
+				</li>
+
+				<li class="status">
+					<h4>状態</h4>
+				</li>
+			</ul>
+			
+		</section>
+
+
 
 		<ul class="paties-list">
 			<% @parties.each do |party| %>
