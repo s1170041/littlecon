@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171007064752) do
+ActiveRecord::Schema.define(version: 20171005114932) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email", default: "", null: false
@@ -56,13 +56,14 @@ ActiveRecord::Schema.define(version: 20171007064752) do
     t.string "venue_address"
     t.string "prefecture"
     t.string "city"
-    t.string "male_fee"
-    t.string "women_fee"
-    t.integer "max_age"
-    t.integer "min_age"
+    t.integer "male_fee"
+    t.integer "women_fee"
+    t.integer "max_age_man"
+    t.integer "min_age_man"
+    t.integer "max_age_women"
+    t.integer "min_age_women"
     t.integer "max_participant_count"
-    t.datetime "open_time"
-    t.boolean "deleted", default: false, null: false
+    t.boolean "open_time", default: false, null: false
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
