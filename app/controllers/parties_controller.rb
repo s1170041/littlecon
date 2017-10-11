@@ -68,15 +68,24 @@ class PartiesController < ApplicationController
   end
 
   def party_params
-    params.require(:party).permit(:venue, 
+    params.require(:party).permit(
+      :title,
+      :venue,
+      :venue_address,
       :prefecture,
       :city,
       :male_fee,
       :women_fee,
-      :max_age,
-      :min_age,
+      :max_age_man,
+      :min_age_man,
+      :max_age_women,
+      :min_age_women,
       :max_participant_count,
+      :open_time,
       :open_time,
       )
   end
 end
+
+
+ 

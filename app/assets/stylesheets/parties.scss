@@ -8,16 +8,15 @@
 		li {
 			width: 600px;
 			height: 300px;
-			margin: 0 auto 8px;
+			margin: 0 auto 16px;
 			position: relative;
-			border-left: solid 2px #ddd;
-			border-right: solid 2px #ddd;
+			border: solid 2px #ddd;
 		}
 	}
 
 	#search-party {
 		width: 750px;
-		margin: 0 auto;
+		margin: 0 auto 30px;
 		border: 1px solid #ddd;
 		border-radius: 2px;
 		
@@ -46,12 +45,12 @@
 }
 #paties-new, #paties-edit {
 	ul#party-form {
-		li {
-			margin-bottom: 8px;
+		padding-top: 30px;
+		h3 {
+			padding-bottom: 3px;
 		}
-		.title {
-			display: inline-block;
-			width: 150px;
+		li {
+			margin-bottom: 16px;
 		}
 	}
 }
