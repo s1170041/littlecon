@@ -9,9 +9,9 @@ Rails.application.routes.draw do
   resources :notices
   resources :parties
   devise_for :users
-  get 'top/index'
+  get 'parties/index'
 
   devise_for :admins
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root to: "top#index"
+  root to: "parties#index"
 end

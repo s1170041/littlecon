@@ -4,43 +4,10 @@
 	<div class="container">
 		<%= link_to 'New Party', new_party_path %>
 		
-		<%= search_form_for @q do |f| %>
-		<div class="control-group">
-			<%= f.label :city %>
-			<div class="controls">
-				<%= f.text_field :city %>
-			</div>
-		</div>
-
-		<div class="control-group">
-			<%= f.label :"女性料金" %>
-			<div class="controls">
-				<%= f.number_field :male_fee %>
-			</div>
-		</div>
-
-		<div class="control-group">
-			<%= f.label :min_age_man %>
-			<div class="controls">
-				<%= f.number_field :min_age_man %>
-			</div>
-		</div>
-
-		<%= f.submit %>
-
-
-		<% end %>
-
-
-
-
-
-
-
 		<!-- 検索機能 -->
 		<section id="search-party">
 			<div class="title">
-				<img class="icon-search" src="<%= image_path 'sample/icon_search.png' %>">
+				<img class="icon-search" src="<%= image_path 'icons/icon_search.png' %>">
 				<h3>スケジュールを検索</h3>
 			</div>
 			<table class="table table-hover">
