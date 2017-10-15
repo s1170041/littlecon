@@ -7,12 +7,89 @@
 	section#paties-list {
 		ul {
 			li {
-				width: 600px;
-				height: 300px;
+				width: 720px;
 				margin: 0 auto 16px;
 				position: relative;
 				border: solid 2px #ddd;
 			}
+		}
+		.party-title {
+			font-size: 26px;
+			padding-left: 8px;
+		}
+		.party-detail {
+			padding: 10px;
+		}
+		.party-thumb {
+			width: 40%;
+			float: left;
+		}
+		.party-detail-left {
+			float: left;
+			width: 58%;
+			margin-left: 2%;
+		}
+		.participant-list {
+			margin-top: 8px;
+			p {
+				padding-bottom: 5px;
+				position: relative;
+				left: 30px;
+			}
+			p:first-child {
+				margin-top: 5px;
+			}
+			.participant-list-title {
+				margin-bottom: 8px;
+				text-align: center;
+			}
+
+			.participant-list-man, .participant-list-woman {
+				float: left;
+				width: 50%;
+				text-align: left;
+			}
+			.participant-list-man {
+				border-left: 2px solid blue;
+			}
+			.participant-list-woman {
+				border-left: 2px solid pink;
+			}	
+			p:before {
+				content: "";
+				width: 16px;
+				height: 16px;
+				position: absolute;
+				left: -20px;
+				top: 0;
+			}
+
+			.participant-list-man p:before {
+    			background: image-url("icons/icon_man") no-repeat center center / 100% 100%;
+			}
+			.participant-list-woman p:before {
+    			background: image-url("icons/icon_woman") no-repeat center center / 100% 100%;
+			}
+		}
+
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			text-align: left;
+			line-height: 1.5;
+		}
+		table th {
+			font-weight: normal;
+
+			padding: 8px;
+			vertical-align: top;
+			border: 1px solid #ccc;
+		}
+		table td {
+			padding: 8px;
+			font-weight: normal;
+			vertical-align: top;
+			border: 1px solid #ccc;
 		}
 	}
 

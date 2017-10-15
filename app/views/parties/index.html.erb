@@ -36,42 +36,55 @@
 
 				</tbody>
 			</table>
-
-
-
-			
 		</section>
 
 		<section id="paties-list">
 			<ul class="paties-list">
 				<% @parties.each do |party| %>
 				<li>
-					<table class="table">
-						<tbody>
-							<tr>
-								<th>タイトル</th>
-								<td><%= party.title %></td>
-							</tr>
-							<tr>
-								<th>会場</th>
-								<td><%= party.venue %></td>
-							</tr>
-							<tr>
-								<th>女性料金</th>
-								<td><%= party.male_fee %></td>
-							</tr>
-							<tr>
-								<th>男性料金</th>
-								<td><%= party.women_fee %></td>
-							</tr>
+					<h3 class="party-title"><%= party.title %></h3>
+					
+					<div class="party-detail">
+						<img class="party-thumb" src="<%= image_path 'parties/party_sample1.png' %>">
+						
+						<div class="party-detail-left">
+							<table>
+								<tbody>
+									<tr>
+										<th>会場</th>
+										<td><%= party.venue %></td>
+									</tr>
+									<tr>
+										<th>料金</th>
+										<td>男性：<%= party.male_fee %>　/　女性： <%= party.women_fee %></td>
+									</tr>
+									<tr>
+										<th>男性料金</th>
+										<td></td>
+									</tr>
+								</tbody>
+							</table>
+							<div class="participant-list">
+								<h4 class="participant-list-title">現在の進捗</h4>
+								<div class="participant-list-man">
+									<p>27歳 会社員</p>
+									<p>28歳 エンジニア</p>
+								</div>
+								<div class="participant-list-woman">
+									<p>25歳 看護師</p>
+									<p>25歳 看護師</p>
+									<p>26歳 弁護士</p>
+								</div>
+								<div class="clearfix"></div>
 
+							</div>
+						</div>
+						<div class="clearfix"></div>
+					</div>
 
-
-						</tbody>
-					</table>
-					<%= link_to 'Show', party %>
+					<%# link_to 'Show', party %>
 					<%= link_to 'Edit', edit_party_path(party) %>
-					<%= link_to 'Destroy', party, method: :delete, data: { confirm: 'Are you sure?' } %>
+					<%# link_to 'Destroy', party, method: :delete, data: { confirm: 'Are you sure?' } %>
 				</li>
 				<% end %>
 			</ul>
