@@ -15,5 +15,11 @@
 //= require_tree .
 //= require jquery
 //= require bootstrap-sprockets
+$(function() {
 
+	$(".navbar-toggle").on("click", function(){
+		
+		$("body").css("right", "100px")
 
+	});
+});
