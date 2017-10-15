@@ -8,7 +8,8 @@ end
 gem 'devise'
 gem 'bootstrap-sass'
 gem 'jquery-rails'
-
+gem "ransack"
+gem 'rename'
 
 
 group :development, :test do

@@ -4,29 +4,24 @@
 
 
 #paties-index {
-	.paties-list {
-		li {
-			width: 600px;
-			height: 300px;
-			margin: 0 auto 16px;
-			position: relative;
-			border: solid 2px #ddd;
+	section#paties-list {
+		ul {
+			li {
+				width: 600px;
+				height: 300px;
+				margin: 0 auto 16px;
+				position: relative;
+				border: solid 2px #ddd;
+			}
 		}
 	}
 
-	#search-party {
+	section#search-party {
 		width: 750px;
 		margin: 0 auto 30px;
 		border: 1px solid #ddd;
 		border-radius: 2px;
 		
-		ul.search-party-list {
-			li {
-				padding: 14px 6px;
-				border-bottom: 1px solid #ddd;
-			}
-		}
-
 		.title {
 			background: #F0EACF;
 			padding: 8px;
@@ -35,6 +30,12 @@
 				width: 20px;
 				display: inline-block;			
 			}
+		}
+		table {
+			th {
+				width: 70px;
+			}
+
 		}
 		h3 {
 			display: inline-block;

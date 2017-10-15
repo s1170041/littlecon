@@ -32,7 +32,7 @@ Extracting libxml2-2.9.5.tar.gz into tmp/x86_64-apple-darwin16.0.0/ports/libxml2
 Running 'configure' for libxml2 2.9.5... OK
 Running 'compile' for libxml2 2.9.5... OK
 Running 'install' for libxml2 2.9.5... OK
-Activating libxml2 2.9.5 (from /Users/yamadakenji/littlecon/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.8.1/ports/x86_64-apple-darwin16.0.0/libxml2/2.9.5)...
+Activating libxml2 2.9.5 (from /Users/yamadakenji/rivelcon/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.8.1/ports/x86_64-apple-darwin16.0.0/libxml2/2.9.5)...
 ************************************************************************
 IMPORTANT NOTICE:
 
@@ -56,7 +56,7 @@ Extracting libxslt-1.1.30.tar.gz into tmp/x86_64-apple-darwin16.0.0/ports/libxsl
 Running 'configure' for libxslt 1.1.30... OK
 Running 'compile' for libxslt 1.1.30... OK
 Running 'install' for libxslt 1.1.30... OK
-Activating libxslt 1.1.30 (from /Users/yamadakenji/littlecon/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.8.1/ports/x86_64-apple-darwin16.0.0/libxslt/1.1.30)...
+Activating libxslt 1.1.30 (from /Users/yamadakenji/rivelcon/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.8.1/ports/x86_64-apple-darwin16.0.0/libxslt/1.1.30)...
 checking for main() in -llzma... yes
 checking for xmlParseDoc() in libxml/parser.h... yes
 checking for xsltParseStylesheetDoc() in libxslt/xslt.h... yes
@@ -155,8 +155,8 @@ rb_data_object_get(VALUE obj)
 2 warnings generated.
 linking shared-object nokogiri/nokogiri.bundle
 Cleaning files only used during build.
-rm -rf /Users/yamadakenji/littlecon/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.8.1/ext/nokogiri/tmp/x86_64-apple-darwin16.0.0/ports
-rm -rf /Users/yamadakenji/littlecon/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.8.1/ports
+rm -rf /Users/yamadakenji/rivelcon/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.8.1/ext/nokogiri/tmp/x86_64-apple-darwin16.0.0/ports
+rm -rf /Users/yamadakenji/rivelcon/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.8.1/ports
 
 make "DESTDIR=" install
 /usr/bin/install -c -m 0755 nokogiri.bundle ./.gem.20170929-4130-16wnua/nokogiri

@@ -50,8 +50,6 @@ ActiveRecord::Schema.define(version: 20171005114932) do
 
   create_table "parties", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "venue"
     t.string "venue_address"
     t.string "prefecture"
@@ -64,6 +62,8 @@ ActiveRecord::Schema.define(version: 20171005114932) do
     t.integer "min_age_women"
     t.integer "max_participant_count"
     t.boolean "open_time", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

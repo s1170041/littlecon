@@ -4,46 +4,111 @@
 	<div class="container">
 		<%= link_to 'New Party', new_party_path %>
 		
+		<%= search_form_for @q do |f| %>
+		<div class="control-group">
+			<%= f.label :city %>
+			<div class="controls">
+				<%= f.text_field :city %>
+			</div>
+		</div>
+
+		<div class="control-group">
+			<%= f.label :"女性料金" %>
+			<div class="controls">
+				<%= f.number_field :male_fee %>
+			</div>
+		</div>
+
+		<div class="control-group">
+			<%= f.label :min_age_man %>
+			<div class="controls">
+				<%= f.number_field :min_age_man %>
+			</div>
+		</div>
+
+		<%= f.submit %>
+
+
+		<% end %>
+
+
+
+
+
+
+
 		<!-- 検索機能 -->
 		<section id="search-party">
 			<div class="title">
 				<img class="icon-search" src="<%= image_path 'sample/icon_search.png' %>">
 				<h3>スケジュールを検索</h3>
 			</div>
+			<table class="table table-hover">
+				<tbody>
+					<tr>
+						<th>開催日</th>
+						<td>
+							<div class="input-group">
+								<input type="text" class="form-control date" />
+								<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<th>場所</th>
+						<td>@TaroQ</td>
+					</tr>
+					<tr>
+						<th>人数</th>
+						<td>@TaroQ</td>
+					</tr>
+					<tr>
+						<th>状況</th>
+						<td>@TaroQ</td>
+					</tr>
+
+				</tbody>
+			</table>
 
 
-			<ul class="search-party-list">
-				<li class="event-date">
-					<h4>開催日</h4>
-				</li>
 
-				<li class="place">
-					<h4>場所</h4>
-
-				</li>
-
-				<li class="participant-count">
-					<h4>人数</h4>
-				</li>
-
-				<li class="status">
-					<h4>状態</h4>
-				</li>
-			</ul>
 			
 		</section>
 
+		<section id="paties-list">
+			<ul class="paties-list">
+				<% @parties.each do |party| %>
+				<li>
+					<table class="table">
+						<tbody>
+							<tr>
+								<th>タイトル</th>
+								<td><%= party.title %></td>
+							</tr>
+							<tr>
+								<th>会場</th>
+								<td><%= party.venue %></td>
+							</tr>
+							<tr>
+								<th>女性料金</th>
+								<td><%= party.male_fee %></td>
+							</tr>
+							<tr>
+								<th>男性料金</th>
+								<td><%= party.women_fee %></td>
+							</tr>
 
 
-		<ul class="paties-list">
-			<% @parties.each do |party| %>
-			<li>
-				<%= link_to 'Show', party %>
-				<%= link_to 'Edit', edit_party_path(party) %>
-				<%= link_to 'Destroy', party, method: :delete, data: { confirm: 'Are you sure?' } %>
-			</li>
-			<% end %>
-		</ul>
+
+						</tbody>
+					</table>
+					<%= link_to 'Show', party %>
+					<%= link_to 'Edit', edit_party_path(party) %>
+					<%= link_to 'Destroy', party, method: :delete, data: { confirm: 'Are you sure?' } %>
+				</li>
+				<% end %>
+			</ul>
+		</section>
 	</div>
 </div>
 

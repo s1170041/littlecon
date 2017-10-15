@@ -5,7 +5,10 @@ class PartiesController < ApplicationController
   # GET /parties
   # GET /parties.json
   def index
-    @parties = Party.all
+    # 検索フォームの入力内容で検索する
+    @q = Party.search(params[:q])
+    # 重複を排除
+    @parties = @q.result(distinct: true) 
   end
 
   # GET /parties/1
