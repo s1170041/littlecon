@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171005114932) do
+ActiveRecord::Schema.define(version: 20171015102254) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email", default: "", null: false
@@ -33,7 +33,22 @@ ActiveRecord::Schema.define(version: 20171005114932) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
+  create_table "answers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "user_id"
+    t.integer "enquete_id"
+    t.integer "question_id"
+    t.integer "answer"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "contacts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "enquetes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -62,6 +77,38 @@ ActiveRecord::Schema.define(version: 20171005114932) do
     t.integer "min_age_women"
     t.integer "max_participant_count"
     t.boolean "open_time", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "profiles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "user_id"
+    t.string "nic_name"
+    t.integer "age"
+    t.integer "p_id"
+    t.integer "city_id"
+    t.integer "job_type"
+    t.integer "annual_income"
+    t.integer "height"
+    t.integer "garments"
+    t.string "blood_type"
+    t.integer "smoke_flag"
+    t.integer "drink_type"
+    t.integer "favorite_stations"
+    t.integer "free_week"
+    t.integer "target_min_age"
+    t.integer "target_max_age"
+    t.integer "marriage_history"
+    t.integer "ng_list"
+    t.string "self_pr"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "questions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "euquete_id"
+    t.string "title"
+    t.string "detail"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

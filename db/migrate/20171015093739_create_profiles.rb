@@ -7,18 +7,18 @@ class CreateProfiles < ActiveRecord::Migration[5.1]
 			t.integer :p_id #都道府県ID
 			t.integer :city_id #都道府県ID
 			t.integer :job_type
-			t.ingeger :annual_income
-			t.ingeger :height
-			t.ingeger :garments
+			t.integer :annual_income
+			t.integer :height
+			t.integer :garments
 			t.string  :blood_type			
-			t.ingeger :smoke_flag
-			t.ingeger :drink_type
-			t.ingeger :favorite_stations
-			t.ingeger :free_week
-			t.ingeger :target_min_age
-			t.ingeger :target_max_age
-			t.ingeger :marriage_history
-			t.ingeger :ng_list
+			t.integer :smoke_flag
+			t.integer :drink_type
+			t.integer :favorite_stations
+			t.integer :free_week
+			t.integer :target_min_age
+			t.integer :target_max_age
+			t.integer :marriage_history
+			t.integer :ng_list
 			t.string  :self_pr
 			t.timestamps
 		end
