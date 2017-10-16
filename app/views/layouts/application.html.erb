@@ -21,14 +21,21 @@
 
 		<div id="gnavi" class="collapse navbar-collapse">
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="">Link1</a></li>
 				<li><%= link_to '新規パーティー', new_party_path %></li>
 				<li><a href="">プロフィール</a></li>
+				
 				<li>
 					<% if admin_signed_in? %>
-					<%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
+					<%= link_to "adminログアウト", destroy_admin_session_path, method: :delete %>
 					<% else %>
-					<%= link_to "ログイン", new_admin_session_path, method: :create %>
+					<%= link_to "adminログイン", new_admin_session_path, method: :create %>
+					<% end %>
+				</li>
+				<li>
+					<% if user_signed_in? %>
+					<%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+					<% else %>
+					<%= link_to "ログイン", new_user_session_path, method: :create %>
 					<% end %>
 				</li>
 			</ul>
