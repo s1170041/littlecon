@@ -3,7 +3,7 @@ class CreateProfiles < ActiveRecord::Migration[5.1]
 		create_table :profiles do |t|
 			t.integer :user_id
 			t.string  :nic_name
-			t.integer :age
+			t.integer :age, default: 20
 			t.integer :p_id #都道府県ID
 			t.integer :city_id #都道府県ID
 			t.integer :job_type
@@ -15,9 +15,9 @@ class CreateProfiles < ActiveRecord::Migration[5.1]
 			t.integer :drink_type
 			t.integer :favorite_stations
 			t.integer :free_week
-			t.integer :target_min_age
+			t.integer :target_min_age, default: 20
 			t.integer :target_max_age
-			t.integer :marriage_history
+			t.boolean :marriage_history
 			t.integer :ng_list
 			t.string  :self_pr
 			t.timestamps

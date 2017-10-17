@@ -1,66 +1,83 @@
 class ProfilesController < ApplicationController
-  before_action :set_profile, only: [:show, :edit, :update]
-  before_action :authenticate_user!
+	before_action :set_profile, only: [:show, :edit, :update]
+	before_action :authenticate_user!
 
-  # GET /profiles/1
-  # GET /profiles/1.json
-  def show
+	def show
 
-  end
+	end
 
-  # GET /profiles/new
-  def new
-    @profile = Profile.new
-  end
+	def new
+		@profile = Profile.new
+	end
 
-  # GET /profiles/1/edit
-  def edit
-  end
+	def edit
+		@profile = Profile.find(params[:id])
+	end
 
-  # POST /profiles
-  # POST /profiles.json
-  def create
-    @profile = current_user.profile.new(profile_params)
-    
-    respond_to do |format|
-      if @profile.save
-        format.html { redirect_to @profile, notice: '新規にプロフィールを作成しました。' }
-      else
-        format.html { render :new }
-      end
-    end
-  end
+	def create
+		@profile = current_user.profile.new(profile_params)
+		
+		respond_to do |format|
+			if @profile.save
+				format.html { redirect_to @profile, notice: '新規にプロフィールを作成しました。' }
+			else
+				format.html { render :new }
+			end
+		end
+	end
 
-  # PATCH/PUT /profiles/1
-  # PATCH/PUT /profiles/1.json
-  def update
-    respond_to do |format|
-      if @profile.update(profile_params)
-        format.html { redirect_to @profile, notice: 'Profile was successfully updated.' }
-        format.json { render :show, status: :ok, location: @profile }
-      else
-        format.html { render :edit }
-        format.json { render json: @profile.errors, status: :unprocessable_entity }
-      end
-    end
-  end
 
-  def profile_top
-    if current_user.profile.nil?
-      redirect_to :action => "new"
-    else
-      redirect_to :action => "show", id:current_user.id
-    end
-  end
+	def update
+		respond_to do |format|
+			if @profile.update(profile_params)
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_profile
-      @profile = Profile.find(params[:id])
-    end
+				format.html { redirect_to @profile, notice: 'Profile was successfully updated.' }
+				format.json { render :show, status: :ok, location: @profile }
+			else
+				format.html { render :edit }
+				format.json { render json: @profile.errors, status: :unprocessable_entity }
+			end
+		end
+	end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def profile_params
-      params.fetch(:profile, {})
-    end
+	def profile_top
+		if current_user.profile.nil?
+			redirect_to :action => "new"
+		else
+			redirect_to :action => "show", id:current_user.id
+		end
+	end
+
+	private
+	def set_profile
+		@profile = Profile.find(params[:id])
+	end
+
+	def profile_params
+		params.fetch(:profile, {}).permit(
+			:nic_name,
+			:age,
+			:p_id, 
+			:city_id,
+			:job_type,
+			:annual_income,
+			:height,
+			:garments,
+			:blood_type,     
+			:smoke_flag,
+			:drink_type,
+			:favorite_stations,
+			:free_week,
+			:target_min_age,
+			:target_max_age,
+			:marriage_history,
+			:ng_list,
+			:self_pr,
+			)
+	end
 end
+
+
+
+
+

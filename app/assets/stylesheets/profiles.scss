@@ -1,3 +1,26 @@
 // Place all the styles related to the profiles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#profiles {
+
+	.form-table {
+		border-collapse: collapse;
+		text-align: left;
+		line-height: 1.5;
+	
+		th {
+			padding: 10px;
+			width: 20%;
+			font-weight: bold;
+			vertical-align: middle;
+			border: 1px solid #ccc;
+		}
+		td {
+			width: 80%;
+			padding: 0 10px;
+			vertical-align: middle;
+			border: 1px solid #ccc;
+		}
+	}
+}
