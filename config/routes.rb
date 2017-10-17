@@ -6,13 +6,15 @@ Rails.application.routes.draw do
   resources :pages
   resources :favorites
   resources :notices
-  resources :parties
+  resources :parties, except: [:destroy, :index]
+  
+  resources :profiles do
+    collection do
+      get "profile_top"
+    end
+  end
 
-  devise_for :users, :controllers => {
-    :sessions => 'users/sessions',
-    :registrations => 'users/registrations'
-  }
-
+  devise_for :users
   get 'parties/index'
 
   devise_for :admins

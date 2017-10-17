@@ -1,5 +1,6 @@
 class ProfilesController < ApplicationController
-  before_action :set_profile, only: [:show, :edit, :update, :destroy]
+  before_action :set_profile, only: [:show, :edit, :update]
+  before_action :authenticate_user!
 
   # GET /profiles
   # GET /profiles.json
@@ -51,13 +52,11 @@ class ProfilesController < ApplicationController
     end
   end
 
-  # DELETE /profiles/1
-  # DELETE /profiles/1.json
-  def destroy
-    @profile.destroy
-    respond_to do |format|
-      format.html { redirect_to profiles_url, notice: 'Profile was successfully destroyed.' }
-      format.json { head :no_content }
+  def profile_top
+    if current_user.profile.nil?
+      redirect_to :action => "new"
+    else
+      redirect_to :action => "show"
     end
   end
 
