@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :notices
   resources :parties, except: [:destroy, :index]
   
-  resources :profiles do
+  resources :profiles,except: [:destroy, :index] do
     collection do
       get "profile_top"
     end

@@ -2,15 +2,10 @@ class ProfilesController < ApplicationController
   before_action :set_profile, only: [:show, :edit, :update]
   before_action :authenticate_user!
 
-  # GET /profiles
-  # GET /profiles.json
-  def index
-    @profiles = Profile.all
-  end
-
   # GET /profiles/1
   # GET /profiles/1.json
   def show
+
   end
 
   # GET /profiles/new
@@ -25,15 +20,13 @@ class ProfilesController < ApplicationController
   # POST /profiles
   # POST /profiles.json
   def create
-    @profile = Profile.new(profile_params)
-
+    @profile = current_user.profile.new(profile_params)
+    
     respond_to do |format|
       if @profile.save
-        format.html { redirect_to @profile, notice: 'Profile was successfully created.' }
-        format.json { render :show, status: :created, location: @profile }
+        format.html { redirect_to @profile, notice: '新規にプロフィールを作成しました。' }
       else
         format.html { render :new }
-        format.json { render json: @profile.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -56,7 +49,7 @@ class ProfilesController < ApplicationController
     if current_user.profile.nil?
       redirect_to :action => "new"
     else
-      redirect_to :action => "show"
+      redirect_to :action => "show", id:current_user.id
     end
   end
 
