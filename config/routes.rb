@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :pages
   resources :favorites
   resources :notices
-  resources :parties, except: [:destroy, :index]
+  resources :parties, except: [:destroy]
   
   resources :profiles,except: [:destroy, :index] do
     collection do
@@ -15,9 +15,9 @@ Rails.application.routes.draw do
   end
 
   devise_for :users
-  get 'parties/index'
 
   devise_for :admins
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'parties/index'
   root to: "parties#index"
 end

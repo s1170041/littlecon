@@ -4,6 +4,17 @@
 		
 		<!-- 検索機能 -->
 		<section id="search-party">
+			<%= search_form_for @q do |f| %>
+			<div class="control-group">
+				<%= f.label :title %>
+				<div class="controls">
+					<%= f.text_field :title %>
+				</div>
+			</div>
+			<%= f.submit %>
+			<% end %>
+
+
 			<div class="title">
 				<img class="icon-search" src="<%= image_path 'icons/icon_search.png' %>">
 				<h3>スケジュールを検索</h3>
@@ -81,7 +92,7 @@
 					</div>
 
 					<%# link_to 'Show', party %>
-					<%= link_to 'Edit', edit_party_path(party) %>
+					<%# link_to 'Edit', edit_party_path(party) %>
 					<%# link_to 'Destroy', party, method: :delete, data: { confirm: 'Are you sure?' } %>
 				</li>
 				<% end %>
