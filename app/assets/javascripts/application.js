@@ -18,8 +18,10 @@
 $(function() {
 
 	$(".navbar-toggle").on("click", function(){
-		
 		$("body").css("right", "100px")
+	});
 
+	$(".date").datepicker({
+		minDate: 0
 	});
 });
