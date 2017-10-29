@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#profiles {
+#profiles-form {
 	.profiles-left {
 		float: left;
 		border: 1px solid #ddd;
@@ -38,6 +38,28 @@
 				padding: 0 10px;
 				vertical-align: middle;
 				border: 1px solid #ccc;
+			}
+		}
+		.address {
+			.form-control, span {
+				float: left;
+			}
+			span {
+				position: relative;
+				top: 8px;
+				margin: 0 4px;
+			}
+			.zip31 {
+				width: 50px;
+			}
+			.zip32 {
+				width: 60px;
+			}
+			.pref31 {
+				width: 100px;
+			}
+			.pref31 {
+				width: 100px;
 			}
 		}
 	}

@@ -9,6 +9,7 @@
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js"></script>
+	<script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
 	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/redmond/jquery-ui.css">
 	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/ui-lightness/jquery-ui.css">
 </head>
@@ -32,7 +33,7 @@
 				
 				<% if user_signed_in? %>
 				<li>
-					<%= link_to 'プロフィール', {:controller => :profiles, :action => :edit, :id => current_user.id} %>
+					<%= link_to 'プロフィール', {:controller => :profiles, :action => :profile_top, :id => current_user.id} %>
 				</li>
 				<% end %>
 

@@ -1,4 +1,4 @@
-<div id="profiles">
+<div id="profiles-form">
 	<%= form_with(model: profile) do |form| %>
 	
 	<section class="profiles-left">
@@ -21,9 +21,9 @@
 		<div class="contents-title">
 			<h3>プロフィール情報</h3>
 		</div>
-		
+
 		<table class="form-table">
-			<tr>
+			<tr>	
 				<th>ニックネーム</th>
 				<td><%= form.text_field :nic_name , class: "form-control" %></td>
 			</tr>
@@ -32,14 +32,23 @@
 				<td><%= form.number_field :age , class: "form-control" %></td>
 			</tr>
 			<tr>
-				<th>都道府県</th>
-				<td><%= form.text_field :p_id , class: "form-control" %></td>
+				<th>住所</th>
+				<td class="address">
+					<p>郵便番号</p>
+					<div class="postal-code margin-bottom-8px">
+						<input type="text" name="zip31" size="4" maxlength="3" class="zip31 form-control">
+						<span>－</span>
+						<input type="text" name="zip32" size="5" maxlength="4" class="zip32 form-control" onKeyUp="AjaxZip3.zip2addr('zip31','zip32','pref31','addr31','addr31');"><br>
+						<div class="clearfix"></div>
+					</div>
+					<input type="text" name="pref31" size="20" class="pref31 form-control margin-bottom-8px" style="display: none">
+					<input type="text" name="addr31" size="40" class="addr31 form-control margin-bottom-8px" style="display: none">
+					<%= form.text_field :postal_code, style: "display: none" %>
+					<%= form.text_field :address1, style: "display: none" %>
+					<%= form.text_field :address2, style: "display: none" %>
+				</td>
 			</tr>
 
-			<tr>
-				<th>市区町村</th>
-				<td><%= form.text_field :city_id , class: "form-control" %></td>
-			</tr>
 			<tr>
 				<th>職業タイプ</th>
 				<td><%= form.text_field :job_type , class: "form-control" %></td>

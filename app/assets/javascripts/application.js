@@ -16,12 +16,20 @@
 //= require jquery
 //= require bootstrap-sprockets
 $(function() {
-
-	$(".navbar-toggle").on("click", function(){
-		$("body").css("right", "100px")
-	});
-
 	$(".date").datepicker({
 		minDate: 0
 	});
+
+	if ($("#profiles-form").length == 1) {
+		$("#profiles-form .address input[type='text']").on("keyup", function(){
+			setTimeout(function(){
+				if ($(".pref31").val() != "" && $(".addr31").val() != "") {
+					$(".pref31, .addr31").show();
+					$("input[name='profile[postal_code]']").val($(".zip31").val() + $(".zip32").val());
+					$("input[name='profile[address1]']").val($(".pref31").val());
+					$("input[name='profile[address2]']").val($(".addr31").val());
+				}
+			},30);
+		});
+	}
 });

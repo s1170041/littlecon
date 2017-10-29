@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171015102254) do
+ActiveRecord::Schema.define(version: 20171029094952) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email", default: "", null: false
@@ -58,6 +58,14 @@ ActiveRecord::Schema.define(version: 20171015102254) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "foot_prints", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "user_id"
+    t.integer "visitor_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_foot_prints_on_user_id"
+  end
+
   create_table "notices", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -84,9 +92,10 @@ ActiveRecord::Schema.define(version: 20171015102254) do
   create_table "profiles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "user_id"
     t.string "nic_name"
-    t.integer "age"
-    t.integer "p_id"
-    t.integer "city_id"
+    t.integer "age", default: 20
+    t.integer "postal_code"
+    t.string "address1"
+    t.string "address2"
     t.integer "job_type"
     t.integer "annual_income"
     t.integer "height"
@@ -96,9 +105,9 @@ ActiveRecord::Schema.define(version: 20171015102254) do
     t.integer "drink_type"
     t.integer "favorite_stations"
     t.integer "free_week"
-    t.integer "target_min_age"
+    t.integer "target_min_age", default: 20
     t.integer "target_max_age"
-    t.integer "marriage_history"
+    t.boolean "marriage_history"
     t.integer "ng_list"
     t.string "self_pr"
     t.datetime "created_at", null: false
@@ -115,6 +124,8 @@ ActiveRecord::Schema.define(version: 20171015102254) do
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email", default: "", null: false
+    t.integer "tel_number"
+    t.integer "profile_id"
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"

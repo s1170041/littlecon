@@ -4,8 +4,9 @@ class CreateProfiles < ActiveRecord::Migration[5.1]
 			t.integer :user_id
 			t.string  :nic_name
 			t.integer :age, default: 20
-			t.integer :p_id #都道府県ID
-			t.integer :city_id #都道府県ID
+			t.integer :postal_code #郵便番号
+			t.string  :address1
+			t.string  :address2
 			t.integer :job_type
 			t.integer :annual_income
 			t.integer :height
