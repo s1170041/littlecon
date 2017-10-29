@@ -8,6 +8,8 @@ class ProfilesController < ApplicationController
 
 	def new
 		@profile = Profile.new
+
+		Profile.job_types
 	end
 
 	def edit

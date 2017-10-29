@@ -51,7 +51,7 @@
 
 			<tr>
 				<th>職業タイプ</th>
-				<td><%= form.text_field :job_type , class: "form-control" %></td>
+				<td><%= form.select :job_type, t('profiles.job_type'), class: "form-control"  %></td>
 			</tr>
 			<tr>
 				<th>年収</th>
