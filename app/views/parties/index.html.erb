@@ -10,8 +10,8 @@
 					<%= f.search_field :title_cont %>
 				</div>
 			</div>
+			
 			<%= f.submit %>
-			<% end %>
 
 
 			<div class="title">
@@ -37,7 +37,7 @@
 					</tr>
 					<tr>
 						<th>場所</th>
-						<td>@TaroQ</td>
+						<td><%= f.select :venue_type, t('parties.venue_type'), class: "form-control" %></td>
 					</tr>
 					<tr>
 						<th>人数</th>
@@ -50,6 +50,7 @@
 
 				</tbody>
 			</table>
+			<% end %>
 		</section>
 
 		<section id="paties-list">

@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(version: 20171029094952) do
 
   create_table "parties", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "title"
+    t.integer "venue_type"
     t.string "venue"
     t.string "venue_address"
     t.string "prefecture"

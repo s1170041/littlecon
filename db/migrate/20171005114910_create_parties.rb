@@ -2,6 +2,7 @@ class CreateParties < ActiveRecord::Migration[5.1]
   def change
     create_table :parties do |t|
       t.string :title
+      t.integer :venue_type
       t.string :venue
       t.string :venue_address
       t.string :prefecture
