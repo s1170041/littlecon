@@ -8,7 +8,6 @@ class ProfilesController < ApplicationController
 
 	def new
 		@profile = Profile.new
-
 		Profile.job_types
 	end
 
@@ -17,7 +16,7 @@ class ProfilesController < ApplicationController
 	end
 
 	def create
-		@profile = current_user.profile.new(profile_params)
+		@profile = Profile.new(profile_params)
 		
 		respond_to do |format|
 			if @profile.save
@@ -32,7 +31,6 @@ class ProfilesController < ApplicationController
 	def update
 		respond_to do |format|
 			if @profile.update(profile_params)
-
 				format.html { redirect_to @profile, notice: 'Profile was successfully updated.' }
 				format.json { render :show, status: :ok, location: @profile }
 			else
@@ -57,19 +55,27 @@ class ProfilesController < ApplicationController
 
 	def profile_params
 		params.fetch(:profile, {}).permit(
+			:user_id,
 			:nic_name,
 			:age,
-			:p_id, 
-			:city_id,
+			:postal_code,
+			:address1,
+			:address2,
 			:job_type,
 			:annual_income,
 			:height,
 			:garments,
-			:blood_type,     
+			:blood_type,			
 			:smoke_flag,
 			:drink_type,
-			:favorite_stations,
-			:free_week,
+			:favorite_stations,			
+			:monday,
+			:tuesday,
+			:wednesday,
+			:thursday,
+			:friday,
+			:saturday,
+			:sunday,
 			:target_min_age,
 			:target_max_age,
 			:marriage_history,
@@ -78,6 +84,7 @@ class ProfilesController < ApplicationController
 			)
 	end
 end
+
 
 
 

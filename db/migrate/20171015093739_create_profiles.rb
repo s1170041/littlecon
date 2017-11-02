@@ -14,10 +14,16 @@ class CreateProfiles < ActiveRecord::Migration[5.1]
 			t.string  :blood_type			
 			t.integer :smoke_flag
 			t.integer :drink_type
-			t.integer :favorite_stations
-			t.integer :free_week
+			t.integer :favorite_stations			
+			t.boolean :monday
+			t.boolean :tuesday
+			t.boolean :wednesday
+			t.boolean :thursday
+			t.boolean :friday
+			t.boolean :saturday
+			t.boolean :sunday
 			t.integer :target_min_age, default: 20
-			t.integer :target_max_age
+			t.integer :target_max_age, default: 40
 			t.boolean :marriage_history
 			t.integer :ng_list
 			t.string  :self_pr

@@ -1,6 +1,6 @@
 <div id="profiles-form">
-	<%= form_with(model: profile) do |form| %>
-	
+	<%= form_with(model: profile) do |f| %>
+	<%= f.hidden_field :user_id , value: current_user.id %>
 	<section class="profiles-left">
 		<img class="my-thumb" src="<%= image_path 'thumb/mythumb.png' %>">
 	</section>
@@ -25,11 +25,11 @@
 		<table class="form-table">
 			<tr>	
 				<th>ニックネーム</th>
-				<td><%= form.text_field :nic_name , class: "form-control" %></td>
+				<td><%= f.text_field :nic_name , class: "form-control" %></td>
 			</tr>
 			<tr>
 				<th>年齢</th>
-				<td><%= form.number_field :age , class: "form-control" %></td>
+				<td><%= f.number_field :age , class: "form-control" %></td>
 			</tr>
 			<tr>
 				<th>住所</th>
@@ -43,58 +43,73 @@
 					</div>
 					<input type="text" name="pref31" size="20" class="pref31 form-control margin-bottom-8px" style="display: none">
 					<input type="text" name="addr31" size="40" class="addr31 form-control margin-bottom-8px" style="display: none">
-					<%= form.text_field :postal_code, style: "display: none" %>
-					<%= form.text_field :address1, style: "display: none" %>
-					<%= form.text_field :address2, style: "display: none" %>
+					<%= f.text_field :postal_code, style: "display: none" %>
+					<%= f.text_field :address1, style: "display: none" %>
+					<%= f.text_field :address2, style: "display: none" %>
 				</td>
 			</tr>
 
 			<tr>
 				<th>職業タイプ</th>
-				<td><%= form.select :job_type, t('profiles.job_type'), class: "form-control"  %></td>
+				<td><%= f.select :job_type, t('profiles.job_type'), class: "form-control" %></td>
 			</tr>
 			<tr>
 				<th>年収</th>
-				<td><%= form.text_field :annual_income , class: "form-control" %></td>
+				<td><%= f.text_field :annual_income , class: "form-control", value: @profile.annual_income %></td>
 			</tr>
 			<tr>
 				<th>身長</th>
-				<td><%= form.text_field :height , class: "form-control" %></td>
+				<td><%= f.text_field :height , class: "form-control" %></td>
 			</tr>
 			<tr>
 				<th>服装</th>
-				<td><%= form.text_field :garments , class: "form-control" %></td>
+				<td><%= f.text_field :garments , class: "form-control" %></td>
 			</tr>
 			<tr>
 				<th>血液型</th>
-				<td><%= form.text_field :blood_type , class: "form-control" %></td>
+				<td><%= f.text_field :blood_type , class: "form-control" %></td>
 			</tr>
 			<tr>
 				<th>喫煙</th>
-				<td><%= form.text_field :smoke_flag , class: "form-control" %></td>
+				<td><%= f.text_field :smoke_flag , class: "form-control" %></td>
 			</tr>
 			<tr>
 				<th>お酒</th>
-				<td><%= form.text_field :drink_type , class: "form-control" %></td>
+				<td><%= f.text_field :drink_type , class: "form-control" %></td>
 			</tr>
 			<tr>
 				<th>最寄駅</th>
-				<td><%= form.text_field :favorite_stations , class: "form-control" %></td>
+				<td><%= f.text_field :favorite_stations , class: "form-control" %></td>
 			</tr>
 			<tr>
 				<th>空いている曜日</th>
-				<td><%= form.text_field :free_week , class: "form-control" %></td>
+				<td class="free-days">
+					<%= f.check_box :monday, id:"profile_monday", value: @profile.monday %>
+					<%= f.label :monday, "月" %>
+					<%= f.check_box :tuesday, id:"profile_tuesday", value: @profile.monday %>
+					<%= f.label :tuesday, "火" %>
+					<%= f.check_box :wednesday, id:"profile_wednesday", value: @profile.monday %>
+					<%= f.label :wednesday, "水" %>
+					<%= f.check_box :thursday, id:"profile_thursday", value: @profile.monday %>
+					<%= f.label :thursday, "木" %>
+					<%= f.check_box :friday, id:"profile_friday", value: @profile.monday %>
+					<%= f.label :friday, "金" %>
+					<%= f.check_box :saturday, id:"profile_saturday", value: @profile.monday %>
+					<%= f.label :saturday, "土" %>
+					<%= f.check_box :sunday, id:"profile_sunday", value: @profile.monday %>
+					<%= f.label :sunday, "日" %>
+				</td>
 			</tr>
 			<tr>
 				<th>恋愛対象年齢</th>
 				<td>
 					<div class="row">
 						<div class="col-xs-4">
-							<%= form.number_field :target_min_age , class: "form-control", min: "20", value:@profile.target_min_age  %>
+							<%= f.number_field :target_min_age , class: "form-control", min: "20", value:@profile.target_min_age  %>
 						</div>
 						<div class="pull-left">〜</div>
 						<div class="col-xs-4">
-							<%= form.number_field :target_max_age , class: "form-control" %>
+							<%= f.number_field :target_max_age , class: "form-control", min: "20", value:@profile.target_max_age  %>
 						</div>
 					</div>
 				</td>
@@ -103,25 +118,25 @@
 			<tr>
 				<th>結婚歴</th>
 				<td>
-					<label><%= form.radio_button :marriage_history, 0 %> なし</label>
-					<label><%= form.radio_button :marriage_history, 1 %> あり </label>
+					<label><%= f.radio_button :marriage_history, 0 %> なし</label>
+					<label><%= f.radio_button :marriage_history, 1 %> あり </label>
 				</td>
 			</tr>
 			<tr>
 				<th>ダメな項目</th>
-				<td><%= form.text_field :ng_list , class: "form-control" %></td>
+				<td><%= f.text_field :ng_list , class: "form-control" %></td>
 			</tr>
 			<tr>
 				<th>自己PR</th>
-				<td><%= form.text_field :self_pr , class: "form-control" %></td>
+				<td><%= f.text_field :self_pr , class: "form-control" %></td>
 			</tr>
 		</table>
 
 		<div class="actions">
-			<%= form.submit %>aa
+			<%= f.submit %>aa
 		</div>
-		<% end %>
 	</section>
 
+	<% end %>
 	<div class="clearfix"></div>
 </div>
