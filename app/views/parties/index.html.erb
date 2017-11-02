@@ -1,6 +1,6 @@
 <div id="paties-index">
 	<div class="container">
-				
+
 		<!-- 検索機能 -->
 		<section id="search-party">
 			<%= search_form_for @q do |f| %>
@@ -22,10 +22,17 @@
 				<tbody>
 					<tr>
 						<th>開催日</th>
-						<td>
-							<div class="input-group">
+						<td class="event-date">
+							<div class="input-group pull-left">
 								<input type="text" class="form-control date" />
 							</div>
+
+							<p class="pull-left">〜</p>
+							
+							<div class="input-group pull-left">
+								<input type="text" class="form-control date" />
+							</div>
+							<div class="clearfix"></div>
 						</td>
 					</tr>
 					<tr>

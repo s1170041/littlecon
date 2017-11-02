@@ -66,10 +66,10 @@
 			}
 
 			.participant-list-man p:before {
-    			background: image-url("icons/icon_man") no-repeat center center / 100% 100%;
+				background: image-url("icons/icon_man") no-repeat center center / 100% 100%;
 			}
 			.participant-list-woman p:before {
-    			background: image-url("icons/icon_woman") no-repeat center center / 100% 100%;
+				background: image-url("icons/icon_woman") no-repeat center center / 100% 100%;
 			}
 		}
 
@@ -81,15 +81,12 @@
 		}
 		table th {
 			font-weight: normal;
-
 			padding: 8px;
-			vertical-align: top;
 			border: 1px solid #ccc;
 		}
 		table td {
 			padding: 8px;
 			font-weight: normal;
-			vertical-align: top;
 			border: 1px solid #ccc;
 		}
 	}
@@ -120,7 +117,17 @@
 			position: relative;
 			bottom: 3px;
 		}
+		table td, table th {
+			vertical-align: middle;
+		}
+
 	}
+	.event-date p {
+		margin: 8px 8px 0 ;
+
+	}
+
+
 }
 #paties-new, #paties-edit {
 	ul#party-form {
