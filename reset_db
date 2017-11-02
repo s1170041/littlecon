@@ -1,2 +1,3 @@
-rake db:migrate:reset
-rake db:seed
+bin/rails db:environment:set RAILS_ENV=development
+rake db:migrate
+#rake db:seed

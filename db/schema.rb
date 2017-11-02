@@ -104,15 +104,9 @@ ActiveRecord::Schema.define(version: 20171029094952) do
     t.integer "smoke_flag"
     t.integer "drink_type"
     t.integer "favorite_stations"
-    t.boolean "monday"
-    t.boolean "tuesday"
-    t.boolean "wednesday"
-    t.boolean "thursday"
-    t.boolean "friday"
-    t.boolean "saturday"
-    t.boolean "sunday"
+    t.integer "free_week"
     t.integer "target_min_age", default: 20
-    t.integer "target_max_age", default: 40
+    t.integer "target_max_age"
     t.boolean "marriage_history"
     t.integer "ng_list"
     t.string "self_pr"
