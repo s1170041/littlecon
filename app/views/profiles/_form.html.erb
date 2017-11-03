@@ -41,21 +41,23 @@
 						<input type="text" name="zip32" size="5" maxlength="4" class="zip32 form-control" onKeyUp="AjaxZip3.zip2addr('zip31','zip32','pref31','addr31','addr31');"><br>
 						<div class="clearfix"></div>
 					</div>
-					<input type="text" name="pref31" size="20" class="pref31 form-control margin-bottom-8px" style="display: none">
-					<input type="text" name="addr31" size="40" class="addr31 form-control margin-bottom-8px" style="display: none">
-					<%= f.text_field :postal_code, style: "display: none" %>
-					<%= f.text_field :address1, style: "display: none" %>
-					<%= f.text_field :address2, style: "display: none" %>
+					
+					<div class="display-none">
+						<input type="text" name="pref31" size="20" class="pref31 form-control margin-bottom-8px">
+						<input type="text" name="addr31" size="40" class="addr31 form-control margin-bottom-8px">
+					</div>
 				</td>
 			</tr>
 
 			<tr>
 				<th>職業タイプ</th>
-				<td><%= f.select :job_type, t('profiles.job_type'), class: "form-control" %></td>
+				<td><%= f.select :job_type, t('profiles.job_type') %></td>
 			</tr>
 			<tr>
 				<th>年収</th>
-				<td><%= f.text_field :annual_income , class: "form-control", value: @profile.annual_income %></td>
+				<td>
+					<%= f.select :annual_income, t('profiles.annual_income') %>
+				</td>
 			</tr>
 			<tr>
 				<th>身長</th>

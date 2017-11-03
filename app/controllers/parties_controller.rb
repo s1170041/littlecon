@@ -74,6 +74,7 @@ class PartiesController < ApplicationController
     params.require(:party).permit(
       :title,
       :venue,
+      :venue_type,
       :venue_address,
       :prefecture,
       :city,

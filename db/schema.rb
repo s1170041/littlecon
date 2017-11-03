@@ -98,7 +98,7 @@ ActiveRecord::Schema.define(version: 20171029094952) do
     t.string "address1"
     t.string "address2"
     t.integer "job_type"
-    t.integer "annual_income"
+    t.integer "annual_income", default: 3
     t.integer "height"
     t.integer "garments"
     t.string "blood_type"

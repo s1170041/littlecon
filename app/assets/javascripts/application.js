@@ -24,12 +24,9 @@ $(function() {
 		$("#profiles-form .address input[type='text']").on("keyup", function(){
 			setTimeout(function(){
 				if ($(".pref31").val() != "" && $(".addr31").val() != "") {
-					$(".pref31, .addr31").show();
-					$("input[name='profile[postal_code]']").val($(".zip31").val() + $(".zip32").val());
-					$("input[name='profile[address1]']").val($(".pref31").val());
-					$("input[name='profile[address2]']").val($(".addr31").val());
+					$(".address .display-none").show();
 				}
-			},30);
+			},10);
 		});
 	}
 });
