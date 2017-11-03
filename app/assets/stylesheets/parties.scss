@@ -110,7 +110,6 @@
 			th {
 				width: 70px;
 			}
-
 		}
 		h3 {
 			display: inline-block;
@@ -120,14 +119,17 @@
 		table td, table th {
 			vertical-align: middle;
 		}
-
+		.table {
+			margin-bottom: 0;
+		}
 	}
 	.event-date p {
 		margin: 8px 8px 0 ;
 
 	}
-
-
+	.venue-type label {
+		margin-right: 8px;
+	}
 }
 #paties-new, #paties-edit {
 	ul#party-form {

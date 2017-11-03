@@ -11,7 +11,6 @@
 				</div>
 			</div>
 			
-			<%= f.submit %>
 
 
 			<div class="title">
@@ -37,19 +36,15 @@
 					</tr>
 					<tr>
 						<th>場所</th>
-						<td><%= f.select :venue_type, t('parties.venue_type'), class: "form-control" %></td>
+						<td class="venue-type">
+							<% t('parties.venue_type').each do |t| %>
+							<label><%= f.radio_button :venue_type, t[1] %><%= t[0] %></label>
+							<% end %>							
+						</td>
 					</tr>
-					<tr>
-						<th>人数</th>
-						<td>@TaroQ</td>
-					</tr>
-					<tr>
-						<th>状況</th>
-						<td>@TaroQ</td>
-					</tr>
-
 				</tbody>
 			</table>
+			<%= f.submit "検索", class: "btn-primary" %>
 			<% end %>
 		</section>
 
