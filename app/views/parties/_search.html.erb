@@ -1,0 +1,43 @@
+<!-- 検索機能 -->
+<section id="search-party">
+	<%= search_form_for @q do |f| %>
+	<div class="control-group">
+		<%= f.label :title %>
+		<div class="controls">
+			<%= f.search_field :title_cont %>
+		</div>
+	</div>
+	<div class="title">
+		<img class="icon-search" src="<%= image_path 'icons/icon_search.png' %>">
+		<h3>スケジュールを検索</h3>
+	</div>
+	<table class="table">
+		<tbody>
+			<tr>
+				<th>開催日</th>
+				<td class="event-date">
+					<div class="input-group pull-left">
+						<input type="text" class="form-control date" />
+					</div>
+
+					<p class="pull-left">〜</p>
+					
+					<div class="input-group pull-left">
+						<input type="text" class="form-control date" />
+					</div>
+					<div class="clearfix"></div>
+				</td>
+			</tr>
+			<tr>
+				<th>場所</th>
+				<td class="venue-type">
+					<% t('parties.venue_type').each do |t| %>
+					<label><%= f.radio_button :venue_type, t[1] %><%= t[0] %></label>
+					<% end %>							
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<%= f.submit "検索", class: "btn-primary" %>
+	<% end %>
+</section>

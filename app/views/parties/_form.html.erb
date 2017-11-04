@@ -26,6 +26,14 @@
 			<%= f.select :venue_type, t('parties.venue_type'), value: @party.venue_type  %>
 		</li>
 		<li>
+			<h3>開催日時</h3>
+			<%= f.text_field :venue , class: "form-control" %>
+		</li>
+		<li>
+			<h3>最寄駅</h3>
+			<%= f.select :venue_type, t('parties.venue_type'), value: @party.venue_type  %>
+		</li>
+		<li>
 			<h3>開催場所の住所</h3>
 			<%= f.text_field :venue_address , class: "form-control" %>
 		</li>
@@ -62,6 +70,10 @@
 			<h3>女性の最小年齢</h3>
 			<%= f.text_field :min_age_women , class: "form-control" %>
 		</li>
+
+		<div class="input-group pull-left">
+			<input type="text" class="form-control date" />
+		</div>
 	</ul>
 
 	<div class="actions">
