@@ -13,4 +13,7 @@ class Participant < ApplicationRecord
 	presence: { message: "自己PRが入力されていません" },
 	length:   { maximum: 100, message: "自己PRは100文字以内で入力してください" }
 
+	def hello
+		self.hoby += "でござる"
+	end 
 end

@@ -28,6 +28,11 @@ group :development do
   gem 'binding_of_caller'
 end
 
+group :test do
+  gem "rspec"
+  gem "rspec-rails"
+end
+
 # デフォルト
 gem 'rails', '~> 5.1.4'
 gem 'mysql2', '>= 0.3.18', '< 0.5'
