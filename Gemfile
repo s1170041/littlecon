@@ -9,6 +9,7 @@ gem 'devise'
 gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem "ransack"
+gem 'rails-i18n'
 
 
 group :development, :test do
@@ -23,6 +24,8 @@ group :development do
   gem 'spring'
   gem 'byebug'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 # デフォルト

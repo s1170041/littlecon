@@ -74,6 +74,9 @@ ActiveRecord::Schema.define(version: 20171111055714) do
   create_table "participants", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "user_id"
     t.integer "party_id"
+    t.integer "entry_count", default: 1, null: false
+    t.string "hoby"
+    t.string "self_pr"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["party_id"], name: "index_participants_on_party_id"

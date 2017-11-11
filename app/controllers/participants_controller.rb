@@ -1,74 +1,40 @@
 class ParticipantsController < ApplicationController
-  before_action :set_participant, only: [:show, :edit, :update, :destroy]
+  	before_action :authenticate_user!
 
-  # GET /participants
-  # GET /participants.json
-  def index
-    @participants = Participant.all
-  end
+	def new
+		@participant = Party.find(params[:party_id]).participants.new
+	end
 
-  # GET /participants/1
-  # GET /participants/1.json
-  def show
-  end
+	def create
+		@participant = Party.find(params[:party_id]).participants.new(participant_params)
+		if @participant.save
+			redirect_to party_participant_path(:id => @participant.id), notice: 'エントリーが完了しました。' 
+		else
+			render :new 
+		end
+	end
 
-  # GET /participants/new
-  def new
-    @participant = Participant.new
-  end
+	def show	
+	end
 
-  # GET /participants/1/edit
-  def edit
-  end
+	def destroy
+		@participant.destroy
+		respond_to do |format|
+			format.html { redirect_to participants_url, notice: 'Participant was successfully destroyed.' }
+		end
+	end
 
-  # POST /participants
-  # POST /participants.json
-  def create
-    @participant = Participant.new(participant_params)
+	private
+	def set_participant
+		@participant = Party.find(params[:party_id]).participants
+	end
 
-    respond_to do |format|
-      if @participant.save
-        format.html { redirect_to @participant, notice: 'Participant was successfully created.' }
-        format.json { render :show, status: :created, location: @participant }
-      else
-        format.html { render :new }
-        format.json { render json: @participant.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /participants/1
-  # PATCH/PUT /participants/1.json
-  def update
-    respond_to do |format|
-      if @participant.update(participant_params)
-        format.html { redirect_to @participant, notice: 'Participant was successfully updated.' }
-        format.json { render :show, status: :ok, location: @participant }
-      else
-        format.html { render :edit }
-        format.json { render json: @participant.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /participants/1
-  # DELETE /participants/1.json
-  def destroy
-    @participant.destroy
-    respond_to do |format|
-      format.html { redirect_to participants_url, notice: 'Participant was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
-
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_participant
-      @participant = Participant.find(params[:id])
-    end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def participant_params
-      params.fetch(:participant, {})
-    end
+	def participant_params
+		params.fetch(:participant, {}).permit(
+			:user_id,
+			:entry_count,
+			:hoby,
+			:self_pr,
+			)
+	end
 end

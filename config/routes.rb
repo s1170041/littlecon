@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :participants
   resources :foot_prints
   resources :answers
   resources :questions
@@ -8,9 +7,11 @@ Rails.application.routes.draw do
   resources :pages
   resources :favorites
   resources :notices
-  resources :parties, except: [:destroy]
+  resources :parties, except: [:destroy] do
+    resources :participants, only: [:new, :create, :show, :destroy]
+  end
   
-  resources :profiles,except: [:destroy, :index] do
+  resources :profiles, except: [:destroy, :index] do
     collection do
       get "profile_top"
     end
@@ -19,7 +20,6 @@ Rails.application.routes.draw do
   devise_for :users
 
   devise_for :admins
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get 'parties/index'
   root to: "parties#index"
 end
