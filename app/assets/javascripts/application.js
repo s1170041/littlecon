@@ -16,17 +16,18 @@
 //= require jquery
 //= require bootstrap-sprockets
 $(function() {
-	$(".date").datepicker({
+	$("#profiles-form .date").datepicker({
 		minDate: 0
 	});
 
+	// プロフィールの処理
 	if ($("#profiles-form").length == 1) {
-		$("#profiles-form .address input[type='text']").on("keyup", function(){
+		$(".address input[type='text']").on("keyup", function(){
 			setTimeout(function(){
 				if ($(".pref31").val() != "" && $(".addr31").val() != "") {
 					$(".address .display-none").show();
 				}
-			},10);
+			},100);
 		});
 	}
 });

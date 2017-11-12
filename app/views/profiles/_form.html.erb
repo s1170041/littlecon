@@ -61,19 +61,22 @@
 			</tr>
 			<tr>
 				<th>身長</th>
-				<td><%= f.text_field :height , class: "form-control" %></td>
+				<td><%= f.select :height , t('profiles.height') %></td>
 			</tr>
 			<tr>
 				<th>服装</th>
-				<td><%= f.text_field :garments , class: "form-control" %></td>
+				<td><%= f.select :garments, t('profiles.garments') %></td>
 			</tr>
 			<tr>
 				<th>血液型</th>
-				<td><%= f.text_field :blood_type , class: "form-control" %></td>
+				<td><%= f.select :blood_type , [["A", "A"], ["B", "B"], ["AB", "AB"], ["O", "O"]] %></td>
 			</tr>
 			<tr>
 				<th>喫煙</th>
-				<td><%= f.text_field :smoke_flag , class: "form-control" %></td>
+				<td>
+					<label><%= f.radio_button :smoke_flag, 0 %> 吸わない</label>
+					<label><%= f.radio_button :smoke_flag, 1 %> 吸う</label>
+				</td>
 			</tr>
 			<tr>
 				<th>お酒</th>
@@ -86,20 +89,13 @@
 			<tr>
 				<th>空いている曜日</th>
 				<td class="free-days">
-					<%= f.check_box :monday, id:"profile_monday", value: @profile.monday %>
-					<%= f.label :monday, "月" %>
-					<%= f.check_box :tuesday, id:"profile_tuesday", value: @profile.monday %>
-					<%= f.label :tuesday, "火" %>
-					<%= f.check_box :wednesday, id:"profile_wednesday", value: @profile.monday %>
-					<%= f.label :wednesday, "水" %>
-					<%= f.check_box :thursday, id:"profile_thursday", value: @profile.monday %>
-					<%= f.label :thursday, "木" %>
-					<%= f.check_box :friday, id:"profile_friday", value: @profile.monday %>
-					<%= f.label :friday, "金" %>
-					<%= f.check_box :saturday, id:"profile_saturday", value: @profile.monday %>
-					<%= f.label :saturday, "土" %>
-					<%= f.check_box :sunday, id:"profile_sunday", value: @profile.monday %>
-					<%= f.label :sunday, "日" %>
+					<label><%= f.check_box :monday, value: @profile.monday %> 月</label>
+					<label><%= f.check_box :tuesday, value: @profile.tuesday %> 火</label>
+					<label><%= f.check_box :wednesday, value: @profile.wednesday %> 水</label>
+					<label><%= f.check_box :thursday, value: @profile.thursday %> 木</label>
+					<label><%= f.check_box :friday, value: @profile.friday %> 金</label>
+					<label><%= f.check_box :saturday, value: @profile.saturday %> 土</label>
+					<label><%= f.check_box :sunday, value: @profile.sunday %> 日</label>
 				</td>
 			</tr>
 			<tr>

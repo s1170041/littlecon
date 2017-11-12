@@ -12,70 +12,71 @@
 
 	<%= form_with(model: party, local: true) do |f| %>
 
-	<ul class="party-form">
-		<li class="form-group has-feedback">
-			<h3>タイトル</h3>
-			<%= f.text_field :title , class: "form-control" %>
-		</li>
-		<li>
-			<h3>開催場所</h3>
-			<%= f.text_field :venue , class: "form-control" %>
-		</li>
-		<li>
-			<h3>最寄駅</h3>
-			<%= f.select :venue_type, t('parties.venue_type'), value: @party.venue_type  %>
-		</li>
-		<li>
-			<h3>開催日時</h3>
-			<%= f.text_field :venue , class: "form-control" %>
-		</li>
-		<li>
-			<h3>最寄駅</h3>
-			<%= f.select :venue_type, t('parties.venue_type'), value: @party.venue_type  %>
-		</li>
-		<li>
-			<h3>開催場所の住所</h3>
-			<%= f.text_field :venue_address , class: "form-control" %>
-		</li>
-		<li>
-			<h3>県</h3>
-			<%= f.text_field :prefecture , class: "form-control" %>
-		</li>
-		<li>
-			<h3>市</h3>
-			<%= f.text_field :city , class: "form-control" %>
-		</li>
+	<table class="table table-bordered">
+		<tr>	
+			<th>タイトル</th>
+			<td><%= f.text_field :title , class: "form-control" %></td>
+		</tr>
+		<tr>
+			<th>開催場所</th>
+			<td><%= f.text_field :venue , class: "form-control" %></td>
+		</tr>
+		<tr>
+			<th>最寄駅</th>
+			<td><%= f.select :venue_type, t('parties.venue_type'), value: @party.venue_type %></td>
+		</tr>
 
-		<li>
-			<h3>男性料金</h3>
-			<%= f.text_field :male_fee , class: "form-control" %>
-		</li>
-		<li>
-			<h3>女性料金</h3>
-			<%= f.text_field :women_fee , class: "form-control" %>
-		</li>
-		<li>
-			<h3>男性の最高年齢</h3>
-			<%= f.number_field :max_age_man , class: "form-control", min: "20", max:"50" %>
-		</li>
-		<li>
-			<h3>男性の最小年齢</h3>
-			<%= f.text_field :min_age_man , class: "form-control" %>
-		</li>
-		<li>
-			<h3>女性の最高年齢</h3>
-			<%= f.text_field :max_age_women , class: "form-control" %>
-		</li>
-		<li>
-			<h3>女性の最小年齢</h3>
-			<%= f.text_field :min_age_women , class: "form-control" %>
-		</li>
+		<tr>
+			<th>開催日時</th>
+			<td><%= f.text_field :venue , class: "form-control" %></td>
+		</tr>
+		<tr>
+			<th>最寄駅</th>
+			<td><%= f.select :venue_type, t('parties.venue_type'), value: @party.venue_type %></td>
+		</tr>
 
-		<div class="input-group pull-left">
-			<input type="text" class="form-control date" />
-		</div>
-	</ul>
+		<tr>
+			<th>開催場所の住所</th>
+			<td><%= f.text_field :venue_address , class: "form-control" %></td>
+		</tr>
 
+		<tr>
+			<th>県</th>
+			<td><%= f.text_field :prefecture , class: "form-control" %></td>
+		</tr>
+		<tr>
+			<th>区・市</th>
+			<td><%= f.text_field :city , class: "form-control" %></td>
+		</tr>
+
+		<tr>
+			<th>男性料金</th>
+			<td><%= f.text_field :male_fee , class: "form-control" %></td>
+		</tr>
+
+		<tr>
+			<th>女性料金</th>
+			<td><%= f.text_field :women_fee , class: "form-control" %></td>
+		</tr>
+
+		<tr class="age">
+			<th>男性の最高年齢</th>
+			<td>
+				<%= f.text_field :min_age_man , class: "form-control" %> 〜 
+				<%= f.number_field :max_age_man , class: "form-control", min: "20", max:"50" %>
+			</td>
+		</tr>
+
+		<tr>
+			<th>女性の年齢</th>
+			<td>
+				<%= f.text_field :min_age_women , class: "form-control" %> 〜 
+				<%= f.text_field :max_age_women , class: "form-control" %>
+			</td>
+		</tr>
+
+
+	</table>
 	<div class="actions">
 		<%= f.submit %>
 	</div>

@@ -9,7 +9,7 @@ class CreateProfiles < ActiveRecord::Migration[5.1]
 			t.string  :address2
 			t.integer :job_type
 			t.integer :annual_income, default: 3
-			t.integer :height
+			t.integer :height, default: 3
 			t.integer :garments
 			t.string  :blood_type			
 			t.integer :smoke_flag
