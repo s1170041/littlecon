@@ -77,7 +77,7 @@ class PartiesController < ApplicationController
       :venue_address,
       :prefecture,
       :city,
-      :male_fee,
+      :man_fee,
       :women_fee,
       :max_age_man,
       :min_age_man,

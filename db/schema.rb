@@ -89,7 +89,7 @@ ActiveRecord::Schema.define(version: 20171111055714) do
     t.string "venue_address"
     t.string "prefecture"
     t.string "city"
-    t.integer "male_fee"
+    t.integer "man_fee"
     t.integer "women_fee"
     t.integer "max_age_man"
     t.integer "min_age_man"
