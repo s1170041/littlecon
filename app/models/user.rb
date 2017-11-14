@@ -7,4 +7,6 @@ class User < ApplicationRecord
 
   has_many :foot_prints, dependent: :destroy
 
+  has_many :participants
+  has_many :parties, through: :participants
 end

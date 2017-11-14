@@ -7,8 +7,7 @@ class PartiesController < ApplicationController
   def index
     # 検索フォームの入力内容で検索する
     @q = Party.search(params[:q])
-    # 重複を排除
-    @parties = @q.result(distinct: true) 
+    @parties = @q.result(distinct: true).includes(participants: :user)
   end
 
   # GET /parties/1

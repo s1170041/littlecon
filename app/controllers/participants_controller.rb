@@ -19,9 +19,7 @@ class ParticipantsController < ApplicationController
 
 	def destroy
 		@participant.destroy
-		respond_to do |format|
-			format.html { redirect_to participants_url, notice: 'Participant was successfully destroyed.' }
-		end
+		redirect_to participants_url, notice: 'Participant was successfully destroyed.'
 	end
 
 	private
