@@ -5,7 +5,6 @@
 				<% @parties.each do |party| %>
 				<li>
 					<h3 class="party-title"><%= party.title %></h3>
-					
 					<div class="party-detail">
 						<img class="party-thumb" src="<%= image_path 'parties/party_sample1.png' %>">
 						
@@ -29,8 +28,9 @@
 							<div class="participant-list">
 								<h4 class="participant-list-title">現在の進捗</h4>
 								<div class="participant-list-man">
-									<p>27歳 会社員</p>
-									<p>28歳 エンジニア</p>
+									<% party.profiles.where(sex: 0).each do |profile| %>
+										<p><%= profile.nic_name %></p>
+									<% end %>
 								</div>
 								<div class="participant-list-woman">
 									<p>25歳 看護師</p>

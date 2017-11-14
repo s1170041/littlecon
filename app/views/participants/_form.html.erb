@@ -22,9 +22,7 @@
 
 			<% #参加者フォーム %>
 			<section class="form">
-				<%= form_with(model: participant, url: party_participants_path, local: true) do |f| %>
-					<%= f.hidden_field :user_id , value: current_user.id %>
-					
+				<%= form_with(model: participant, url: party_participants_path, local: true) do |f| %>					
 					<table class="table">
 						<tbody>
 							<tr>

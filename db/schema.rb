@@ -72,7 +72,7 @@ ActiveRecord::Schema.define(version: 20171111055714) do
   end
 
   create_table "participants", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "user_id"
+    t.integer "profile_id"
     t.integer "party_id"
     t.integer "entry_count", default: 1, null: false
     t.string "hoby"
@@ -104,13 +104,14 @@ ActiveRecord::Schema.define(version: 20171111055714) do
   create_table "profiles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "user_id"
     t.string "nic_name"
+    t.integer "sex", default: 0
     t.integer "age", default: 20
     t.integer "postal_code"
     t.string "address1"
     t.string "address2"
     t.integer "job_type"
     t.integer "annual_income", default: 3
-    t.integer "height"
+    t.integer "height", default: 3
     t.integer "garments"
     t.string "blood_type"
     t.integer "smoke_flag"

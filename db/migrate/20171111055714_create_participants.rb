@@ -1,7 +1,7 @@
 class CreateParticipants < ActiveRecord::Migration[5.1]
 	def change
 		create_table :participants do |t|
-			t.integer :user_id
+			t.integer :profile_id
 			t.integer :party_id
 			t.integer :entry_count, null: false, default: 1 #参加人数
 			t.string :hoby

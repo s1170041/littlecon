@@ -3,6 +3,7 @@ class CreateProfiles < ActiveRecord::Migration[5.1]
 		create_table :profiles do |t|
 			t.integer :user_id
 			t.string  :nic_name
+			t.integer :sex, default: 0
 			t.integer :age, default: 20
 			t.integer :postal_code #郵便番号
 			t.string  :address1
@@ -14,7 +15,7 @@ class CreateProfiles < ActiveRecord::Migration[5.1]
 			t.string  :blood_type			
 			t.integer :smoke_flag
 			t.integer :drink_type
-			t.integer :favorite_stations			
+			t.integer :favorite_stations
 			t.boolean :monday
 			t.boolean :tuesday
 			t.boolean :wednesday

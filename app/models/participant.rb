@@ -1,6 +1,6 @@
 class Participant < ApplicationRecord
 	belongs_to :party
-    belongs_to :user
+    belongs_to :profile
 
 	# バリデーション
 	validates :entry_count,

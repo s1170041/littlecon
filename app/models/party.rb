@@ -1,6 +1,6 @@
 class Party < ApplicationRecord
   	has_many :participants
-  	has_many :users, through: :participants
+  	has_many :profiles, through: :participants
 
 	length_text = "文字数は%{count}文字以内でお願いします"
 	validates :title, presence: { message: "タイトルが入力されていません" }, length:   { maximum: 50, message: length_text }

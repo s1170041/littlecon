@@ -3,10 +3,13 @@ class ParticipantsController < ApplicationController
 
 	def new
 		@participant = Party.find(params[:party_id]).participants.new
+		@participant.profile_id = current_user.profile.id
 	end
 
 	def create
 		@participant = Party.find(params[:party_id]).participants.new(participant_params)
+		@participant.profile_id = current_user.profile.id
+
 		if @participant.save
 			redirect_to party_participant_path(:id => @participant.id), notice: 'エントリーが完了しました。' 
 		else
@@ -29,7 +32,6 @@ class ParticipantsController < ApplicationController
 
 	def participant_params
 		params.fetch(:participant, {}).permit(
-			:user_id,
 			:entry_count,
 			:hoby,
 			:self_pr,
