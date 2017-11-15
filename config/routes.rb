@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :messages
   resources :foot_prints
   resources :answers
   resources :questions

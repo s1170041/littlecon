@@ -33,9 +33,9 @@
 									<% end %>
 								</div>
 								<div class="participant-list-woman">
-									<p>25歳 看護師</p>
-									<p>25歳 看護師</p>
-									<p>26歳 弁護士</p>
+									<% party.profiles.where(sex: 1).each do |profile| %>
+										<p><%= profile.nic_name %></p>
+									<% end %>
 								</div>
 								<div class="clearfix"></div>
 							</div>
