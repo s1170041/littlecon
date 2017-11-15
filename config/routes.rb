@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  resources :messages
+  resources :message_details, only: [:new, :create]
+  resources :messages, except: [:edit, :update]
   resources :foot_prints
   resources :answers
   resources :questions
@@ -19,7 +20,6 @@ Rails.application.routes.draw do
   end
 
   devise_for :users
-
   devise_for :admins
   get 'parties/index'
   root to: "parties#index"

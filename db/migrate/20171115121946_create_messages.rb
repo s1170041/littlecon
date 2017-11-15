@@ -3,9 +3,8 @@ class CreateMessages < ActiveRecord::Migration[5.1]
 		create_table :messages do |t|
 			t.integer :user_id
 			t.string :subject
-			t.text :detail
-			t.boolean :read, default: false #未読
 			t.timestamps
 		end
+		add_index :messages, :user_id
 	end
 end
