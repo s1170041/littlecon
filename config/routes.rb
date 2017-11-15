@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  resources :message_details, only: [:new, :create]
-  resources :messages, except: [:edit, :update]
   resources :foot_prints
   resources :answers
   resources :questions
@@ -17,6 +15,10 @@ Rails.application.routes.draw do
     collection do
       get "profile_top"
     end
+  end
+
+  resources :messages, except: [:edit, :update] do
+    resources :message_details, only: [:new, :create]
   end
 
   devise_for :users

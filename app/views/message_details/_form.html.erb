@@ -1,4 +1,4 @@
-<%= form_with(model: message_detail, local: true) do |form| %>
+<%= form_with(model: message_detail, url: message_details_path, local: true) do |form| %>
   <% if message_detail.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(message_detail.errors.count, "error") %> prohibited this message_detail from being saved:</h2>

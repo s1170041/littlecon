@@ -30,11 +30,13 @@
 								<div class="participant-list-man">
 									<% party.profiles.where(sex: 0).each do |profile| %>
 										<p><%= profile.nic_name %></p>
+										<%= link_to 'メール', new_message_path %>
 									<% end %>
 								</div>
 								<div class="participant-list-woman">
 									<% party.profiles.where(sex: 1).each do |profile| %>
 										<p><%= profile.nic_name %></p>
+										<%= link_to 'メール', new_message_path %>
 									<% end %>
 								</div>
 								<div class="clearfix"></div>
