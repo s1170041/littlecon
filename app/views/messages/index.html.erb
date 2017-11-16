@@ -1,7 +1,20 @@
-<p ><%= notice %></p>
-
-<h1>Messages</h1>
-
-
-<br>
-
+<div id="messages-index">
+	<div class="container">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>受信日</th>
+					<th>件名</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @messages.each do |m| %>
+				<tr>
+					<th><%= l(m.updated_at, format: :short) %></th>
+					<td><%= link_to m.subject, controller: "messages", action: "show", id: m.id  %></td>
+				</tr>
+				<% end %>	
+			</tbody>
+		</table>
+	</div>
+</div>

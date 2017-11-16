@@ -1,4 +1,8 @@
-<p ><%= notice %></p>
-
-<%= link_to 'Edit', edit_message_path(@message) %> |
-<%= link_to 'Back', messages_path %>
+<div id="messages-show">
+	<div class="container">
+		<% @message.message_details.each do |md| %>
+			<%= simple_time(md.updated_at) %>
+			<%= md.detail %>
+		<% end %>
+	</div>
+</div>
