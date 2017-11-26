@@ -1,0 +1,15 @@
+current directory: /Users/yamadakenji/rivelcon/vendor/bundle/ruby/2.3.0/gems/bindex-0.5.0/ext/bindex
+/Users/yamadakenji/.rbenv/versions/2.3.1/bin/ruby -r ./siteconf20171123-5945-4v00sf.rb extconf.rb
+creating Makefile
+
+current directory: /Users/yamadakenji/rivelcon/vendor/bundle/ruby/2.3.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR=" clean
+
+current directory: /Users/yamadakenji/rivelcon/vendor/bundle/ruby/2.3.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR="
+compiling cruby.c
+linking shared-object bindex/cruby.bundle
+
+current directory: /Users/yamadakenji/rivelcon/vendor/bundle/ruby/2.3.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20171123-5945-amule6/bindex

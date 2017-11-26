@@ -30,4 +30,14 @@ $(function() {
 			},100);
 		});
 	}
+
+	$("#messages-show .search-encounter-title").on("click", function(){
+		var parent = $(this).parents(".search-encounter-block");
+		parent.find("ul").slideToggle();
+		if ($(this).hasClass("arrow-up")) {
+			$(this).addClass("arrow-right").removeClass("arrow-up");
+		} else {
+			$(this).addClass("arrow-up").removeClass("arrow-right");			
+		}
+	});
 });
