@@ -12,95 +12,206 @@
 	}
 }
 
-
-#messages-show {
-	.arrow-right, .arrow-up {
+// PCスタイル
+#search-encounter-pc {
+	.bk-japan-map {
 		position: relative;
-		width: 100%;
+		width: 840px;
+		height: 594px;
+		background: image-url("backgrounds/japan_map.png") no-repeat center top / 100% 100%;
 	}
-
-	.arrow-right::before, .arrow-right::after, .arrow-up::before, .arrow-up::after {
-		content: "";
-		position: absolute;
-		transition: all linear .2s;
-		-webkit-transition: all linear .2s;
-	}
-	.arrow-right::before, .arrow-up::before {
-		top: 8px;
-		right: 12px;
-		width: 16px;
-		height: 16px;
-		-webkit-border-radius: 50%;
-		border-radius: 50%;
-		background: #999;
-	}
-	.arrow-right::after{
-		top: 13px;
-		right: 18px;
-		width:  6px;
-		height: 6px;
-		border-top: 1px solid #fff;
-		border-right: 1px solid #fff;
-		-webkit-transform: rotate(45deg);
-		transform: rotate(45deg);
-	}
-	.arrow-up::after{
-		top: 14px;
-		right: 17px;
-		width:  6px;
-		height: 6px;
-		border-top: 1px solid #fff;
-		border-right: 1px solid #fff;
-		-webkit-transform: rotate(-45deg);
-		transform: rotate(-45deg);
-	}
-
 	.search-encounter-block {
-		margin-bottom: 8px;
-	}
-
-	.search-encounter ul {
-		display: none;
+		position: absolute;
+		color: #333;
 		border: 1px solid #ddd;
-		cursor: pointer;
+		border-radius: 5px;
+		background: #fff;
 	}
 
-	.search-encounter li {
-		padding: 10px 18px;
-		border-bottom: 1px solid #ddd;
-		transition: all linear .2s;
-		-webkit-transition: all linear .2s;
-		font-size: 12px;
-		color: #262626;
+	.search-encounter-block:hover {
+		width: 116px;
 	}
 
-	.search-encounter li:hover {
-		background: #ff3665;
-	}
-	
 	.search-encounter-title {
-		background-color: rgba(255,54,101,0.3);
-		cursor: pointer;
+		padding: 8px 12px;
 	}
 
-	.search-encounter-title:hover {
-		opacity: 0.8;
+	.search-encounter-block ul {
+		// display: none;
 	}
 
-	.search-encounter-title h3 {
-		padding: 8px 6px;
+	.search-encounter-block ul a {
+		display: block;
+		color: #333;
+		padding: 8px 12px;
+		border-top: 1px solid #ddd;
+		border-bottom: 1px solid #ddd;
 	}
 
-	.search-encounter-top {
-		width: 100%;
-		background: image-url("icons/icon_search_encounter") no-repeat center top / 32px 32px;
-		margin-bottom: 18px;
+
+
+	#tokyo {
+		top: 400px;
+		left: 300px;
+	}
+	#tokyo:hover {
+		border: 1px solid red;
+	}
+	#tokyo a:hover {
+		color: red;
+		background: rgba(255, 0, 0, 0.5);
 	}
 
-	.search-encounter-top p {
-		text-align: center;
-		padding: 50px 0 10px;
-		border-bottom: 2px dashed #ff3665;
-		font-size: 13px;
+
+
+	#kanto {
+		top: 100px;
+		left: 50px;
+	}
+	#hokkaido {
+		top: 100px;
+		left: 100px;
+	}
+
+	#touhoku {
+		top: 100px;
+		left: 150px;
+	}
+
+	#hokuriku {
+		top: 100px;
+		left: 250px;
+	}
+	#toukai {
+		top: 100px;
+		left: 300px;
+	}
+	#kansai {
+		top: 100px;
+		left: 350px;
+	}
+	#sikoku {
+		top: 200px;
+		left: 0px;
+	}
+	#tyugoku{
+		top: 200px;
+		left: 50px;
+	}
+	#kyusyu {
+		top: 200px;
+		left: 100px;
+	}
+	#okinawa {
+		top: 200px;
+		left: 150px;
 	}
 }
+
+#search-encounter-sm {
+	display: none;
+}
+
+// スマホスタイル
+@media screen and ( max-width: 767px ){
+	#search-encounter-pc {
+		display: none;
+	}
+
+	#search-encounter-sm {
+		display: block;
+	}
+
+	#search-encounter-sm {
+		.arrow-right, .arrow-up {
+			position: relative;
+			width: 100%;
+		}
+
+		.arrow-right::before, .arrow-right::after, .arrow-up::before, .arrow-up::after {
+			content: "";
+			position: absolute;
+			transition: all linear .2s;
+			-webkit-transition: all linear .2s;
+		}
+		.arrow-right::before, .arrow-up::before {
+			top: 8px;
+			right: 12px;
+			width: 16px;
+			height: 16px;
+			-webkit-border-radius: 50%;
+			border-radius: 50%;
+			background: #999;
+		}
+		.arrow-right::after{
+			top: 13px;
+			right: 18px;
+			width:  6px;
+			height: 6px;
+			border-top: 1px solid #fff;
+			border-right: 1px solid #fff;
+			-webkit-transform: rotate(45deg);
+			transform: rotate(45deg);
+		}
+		.arrow-up::after{
+			top: 14px;
+			right: 17px;
+			width:  6px;
+			height: 6px;
+			border-top: 1px solid #fff;
+			border-right: 1px solid #fff;
+			-webkit-transform: rotate(-45deg);
+			transform: rotate(-45deg);
+		}
+
+		.search-encounter-block {
+			margin-bottom: 8px;
+		}
+
+		.search-encounter-block ul {
+			display: none;
+			border: 1px solid #ddd;
+			cursor: pointer;
+		}
+
+		.search-encounter-block ul li {
+			padding: 10px 18px;
+			border-bottom: 1px solid #ddd;
+			transition: all linear .2s;
+			-webkit-transition: all linear .2s;
+			font-size: 12px;
+			color: #262626;
+		}
+
+		.search-encounter-block li:hover {
+			background: #ff3665;
+		}
+
+		.search-encounter-title {
+			background-color: rgba(255,54,101,0.3);
+			cursor: pointer;
+		}
+
+		.search-encounter-title:hover {
+			opacity: 0.8;
+		}
+
+		.search-encounter-title h3 {
+			padding: 8px 6px;
+		}
+
+		.search-encounter-top {
+			width: 100%;
+			background: image-url("icons/icon_search_encounter") no-repeat center top / 32px 32px;
+			margin-bottom: 18px;
+		}
+
+		.search-encounter-top p {
+			text-align: center;
+			padding: 50px 0 10px;
+			border-bottom: 2px dashed #ff3665;
+			font-size: 13px;
+		}
+	}
+}
+

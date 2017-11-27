@@ -31,7 +31,7 @@ $(function() {
 		});
 	}
 
-	$("#messages-show .search-encounter-title").on("click", function(){
+	$("#search-encounter-sm .trg_show_list").on("click", function(){
 		var parent = $(this).parents(".search-encounter-block");
 		parent.find("ul").slideToggle();
 		if ($(this).hasClass("arrow-up")) {
@@ -39,5 +39,13 @@ $(function() {
 		} else {
 			$(this).addClass("arrow-up").removeClass("arrow-right");			
 		}
+	});
+
+	$("#search-encounter-pc .trg_show_list").hover(function(){
+		$(this).find("ul").show();
+		$(this).addClass("active-seb");		
+	},function(){
+		$(this).find("ul").hide();
+		$(this).removeClass("active-seb");
 	});
 });
