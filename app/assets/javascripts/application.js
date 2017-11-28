@@ -30,22 +30,27 @@ $(function() {
 			},100);
 		});
 	}
+});
 
-	$("#search-encounter-sm .trg_show_list").on("click", function(){
-		var parent = $(this).parents(".search-encounter-block");
-		parent.find("ul").slideToggle();
-		if ($(this).hasClass("arrow-up")) {
-			$(this).addClass("arrow-right").removeClass("arrow-up");
-		} else {
-			$(this).addClass("arrow-up").removeClass("arrow-right");			
-		}
-	});
+$(function() {
 
-	$("#search-encounter-pc .trg_show_list").hover(function(){
-		$(this).find("ul").show();
-		$(this).addClass("active-seb");		
-	},function(){
-		$(this).find("ul").hide();
-		$(this).removeClass("active-seb");
+	jQuery(function($) {
+		$("#search-encounter-sm .trg_show_list").on("click", function(){
+			var parent = $(this).parents(".search-encounter-block");
+			parent.find("ul").slideToggle();
+			if ($(this).hasClass("arrow-up")) {
+				$(this).addClass("arrow-right").removeClass("arrow-up");
+			} else {
+				$(this).addClass("arrow-up").removeClass("arrow-right");			
+			}
+		});
+
+		$("#search-encounter-pc .trg_show_list").hover(function(){
+			$(this).find("ul").show();
+			$(this).addClass("active-seb");		
+		},function(){
+			$(this).find("ul").hide();
+			$(this).removeClass("active-seb");
+		});		
 	});
 });

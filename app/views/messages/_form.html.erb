@@ -1,26 +1,48 @@
 <div class="container">
-	<% if message.errors.any? %>
-	<div id="error_explanation">
-		<h2><%= pluralize(message.errors.count, "error") %> prohibited this message from being saved:</h2>
+    <% if message.errors.any? %>
+    <div id="error_explanation">
+        <h2><%= pluralize(message.errors.count, "error") %> prohibited this message from being saved:</h2>
 
-		<ul>
-			<% message.errors.full_messages.each do |message| %>
-			<li><%= message %></li>
-			<% end %>
-		</ul>
-	</div>
-	<% end %>
+        <ul>
+            <% message.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+            <% end %>
+        </ul>
+    </div>
+    <% end %>
 
-	<%= form_for @message, url: messages_path do |m| %>
-		<%= m.text_field :subject , class: "form-control", placeholder: "件名" %>
-		<br>
+    <%= form_for @message, url: messages_path do |m| %>
+    <%= m.text_field :subject , class: "form-control", placeholder: "件名" %>
+    <br>
 
-		<%= m.fields_for :message_details do |md| %>
-			<%= md.text_area :detail , class: "form-control" %>
-		<% end %>
+    <%= m.fields_for :message_details do |md| %>
+    <%= md.text_area :detail , class: "form-control" %>
+    <% end %>
 
-		<div class="actions">
-			<%= m.submit %>
-		</div>
-	<% end %>
+    <div class="actions">
+        <%= m.submit %>
+    </div>
+    <% end %>
 </div>
+
+<script type="text/javascript">
+    jQuery(function($) {
+        $("#search-encounter-sm .trg_show_list").on("click", function(){
+            var parent = $(this).parents(".search-encounter-block");
+            parent.find("ul").slideToggle();
+            if ($(this).hasClass("arrow-up")) {
+                $(this).addClass("arrow-right").removeClass("arrow-up");
+            } else {
+                $(this).addClass("arrow-up").removeClass("arrow-right");            
+            }
+        });
+
+        $("#search-encounter-pc .trg_show_list").hover(function(){
+            $(this).find("ul").show();
+            $(this).addClass("active-seb");     
+        },function(){
+            $(this).find("ul").hide();
+            $(this).removeClass("active-seb");
+        });     
+    });
+</script>
