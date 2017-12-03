@@ -16,41 +16,51 @@
 //= require jquery
 //= require bootstrap-sprockets
 $(function() {
-	$("#profiles-form .date").datepicker({
-		minDate: 0
-	});
+    $("#profiles-form .date").datepicker({
+        minDate: 0
+    });
 
-	// プロフィールの処理
-	if ($("#profiles-form").length == 1) {
-		$(".address input[type='text']").on("keyup", function(){
-			setTimeout(function(){
-				if ($(".pref31").val() != "" && $(".addr31").val() != "") {
-					$(".address .display-none").show();
-				}
-			},100);
-		});
-	}
+    // プロフィールの処理
+    if ($("#profiles-form").length == 1) {
+        $(".address input[type='text']").on("keyup", function(){
+            setTimeout(function(){
+                if ($(".pref31").val() != "" && $(".addr31").val() != "") {
+                    $(".address .display-none").show();
+                }
+            },100);
+        });
+    }
 });
 
 $(function() {
 
-	jQuery(function($) {
-		$("#search-encounter-sm .trg_show_list").on("click", function(){
-			var parent = $(this).parents(".search-encounter-block");
-			parent.find("ul").slideToggle();
-			if ($(this).hasClass("arrow-up")) {
-				$(this).addClass("arrow-right").removeClass("arrow-up");
-			} else {
-				$(this).addClass("arrow-up").removeClass("arrow-right");			
-			}
-		});
+    jQuery(function($) {
+        $("#search-encounter-sm .trg_show_list").on("click", function(){
+            var parent = $(this).parents(".search-encounter-block");
+            parent.find("ul").slideToggle();
+            if ($(this).hasClass("arrow-up")) {
+                $(this).addClass("arrow-right").removeClass("arrow-up");
+            } else {
+                $(this).addClass("arrow-up").removeClass("arrow-right");            
+            }
+        });
 
-		$("#search-encounter-pc .trg_show_list").hover(function(){
-			$(this).find("ul").show();
-			$(this).addClass("active-seb");		
-		},function(){
-			$(this).find("ul").hide();
-			$(this).removeClass("active-seb");
-		});		
-	});
+
+        $("#pc-view .trg_show_list").hover(function(){
+            $(".ul-1").hide();
+            $(this).find(".ul-1").show();
+            $(this).addClass("active-seb");
+        });
+
+
+        $("#pc-view .trg_ul_2").hover(function(){
+            $(".ul-2").hide();
+            var parent = $(this).parent();
+            parent.find(".ul-2").show();
+        });
+
+        $(document).on('click', function(event) {
+            $(".ul-1, .ul-2").hide();
+        });
+    });
 });
