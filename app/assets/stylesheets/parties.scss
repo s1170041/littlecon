@@ -133,16 +133,32 @@
 		margin-right: 8px;
 	}
 }
+
 #parties-form {
 	.table-bordered {
+		color: #7f7f7f;
 		width: 700px;
 		margin: 0 auto;
+		border: none;
+		
+		tr,th,td {
+			border: none;
+		}
 		th {
 			vertical-align: middle;
+			text-align: left;
+		}
+		.col-xs-5 {
+			padding: 0px;
+		}
+		.contents_duplicated {
+			display: none;
+		}
+		.form-control:focus {
+			border-color: #E8001F;
+			box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(191,0,37, 0.6);
 		}
 	}
-
-
 
 }
 
