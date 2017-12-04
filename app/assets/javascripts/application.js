@@ -35,17 +35,7 @@ $(function() {
 $(function() {
 
     jQuery(function($) {
-        $("#search-encounter-sm .trg_show_list").on("click", function(){
-            var parent = $(this).parents(".search-encounter-block");
-            parent.find("ul").slideToggle();
-            if ($(this).hasClass("arrow-up")) {
-                $(this).addClass("arrow-right").removeClass("arrow-up");
-            } else {
-                $(this).addClass("arrow-up").removeClass("arrow-right");            
-            }
-        });
-
-
+    
         $("#pc-view .trg_show_list").hover(function(){
             $(".ul-1").hide();
             $(this).find(".ul-1").show();
@@ -59,8 +49,36 @@ $(function() {
             parent.find(".ul-2").show();
         });
 
-        $(document).on('click', function(event) {
+        $("#pc-view").on('click', function(event) {
             $(".ul-1, .ul-2").hide();
         });
+
+        $("#sm-view .sm_trg_ul_1").on("click", function(){
+            var parent = $(this).parent();
+            addArrow($(this))       
+            parent.find(".ul-1").slideToggle();
+        });
+
+        $("#sm-view .sm_trg_ul_2").on("click", function(){
+            var parent = $(this).parent();     
+            addArrow($(this))       
+            parent.find(".ul-2").slideToggle();
+        });
+
+        function addArrow(elm) {
+            if (elm.hasClass("arrow-right")) {
+                elm.addClass("arrow-up").removeClass("arrow-right");
+            } else {
+                elm.addClass("arrow-right").removeClass("arrow-up");
+            }
+        }
+
+
+
+
+
+
+
+
     });
 });

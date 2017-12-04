@@ -89,7 +89,6 @@
     display: none;
 }
 #pc-view .pc-map-child .ul-2 li {
-    padding: 8px 0;
     text-align: center;
     min-width: 65px;
     width: 100%;
@@ -117,17 +116,14 @@
     top: 20px;
     left: -19px;
     border: 7px solid transparent;
-    border-right: 8px solid #999;
     z-index: 1;
 }
-
-
-
-
-
-
-
-
+#pc-view .pc-map-child ul.ul-2 a {
+    width: 100%;
+    height: 100%;
+    padding: 8px 0;
+    display: block;
+}
 
 
 
@@ -163,6 +159,10 @@
 #pc-view .bk-japan-map #touhoku a:hover {
     color: #08DAFC;
 }
+#pc-view #touhoku ul.ul-2:before{
+    border-right: 8px solid #08DAFC;
+}
+
 
 
 
@@ -184,6 +184,9 @@
 }
 #pc-view .bk-japan-map #kanto a:hover {
     color: #03CF9C;
+}
+#pc-view #kanto ul.ul-2:before{
+    border-right: 8px solid #03CF9C;
 }
 
 
@@ -208,7 +211,9 @@
 #pc-view .bk-japan-map #hokuriku a:hover {
     color: #3DAB5A;
 }
-
+#pc-view #hokuriku ul.ul-2:before{
+    border-right: 8px solid #3DAB5A;
+}
 
 
 
@@ -232,6 +237,9 @@
 #pc-view .bk-japan-map #toukai a:hover {
     color: #6BE162;
 }
+#pc-view #toukai ul.ul-2:before{
+    border-right: 8px solid #6BE162;
+}
 
 
 
@@ -253,6 +261,9 @@
 #pc-view .bk-japan-map #kansai a:hover {
     color: #FEA830;
 }
+#pc-view #kansai ul.ul-2:before{
+    border-right: 8px solid #FEA830;
+}
 
 
 /* 四国 */
@@ -272,6 +283,9 @@
 }
 #pc-view .bk-japan-map #sikoku a:hover {
     color: #FE3DA9;
+}
+#pc-view #sikoku ul.ul-2:before{
+    border-right: 8px solid #FE3DA9;
 }
 
 
@@ -293,7 +307,9 @@
 #pc-view .bk-japan-map #tyugoku a:hover {
     color: #FF3111;
 }
-
+#pc-view #tyugoku ul.ul-2:before{
+    border-right: 8px solid #FF3111;
+}
 
 
 
@@ -315,6 +331,9 @@
 }
 #pc-view .bk-japan-map #kyusyu a:hover {
     color: #FF6D6E;
+}
+#pc-view #kyusyu ul.ul-2:before{
+    border-right: 8px solid #FF6D6E;
 }
 
 
@@ -512,48 +531,52 @@
         transform: rotate(-45deg);
     }
 
-    #sm-view .map-child {
+    #sm-view .sm-map-child {
         margin-bottom: 8px;
     }
 
-    #sm-view .map-child ul {
-        display: none;
+    #sm-view .sm-map-child .ul-1 {
         border: 1px solid #ddd;
         cursor: pointer;
     }
 
-    #sm-view .map-child ul li {
+    #sm-view .sm-map-child .ul-1>li {
         border-bottom: 1px solid #ddd;
         transition: all linear .2s;
         -webkit-transition: all linear .2s;
         font-size: 12px;
         color: #262626;
     }
-    #sm-view .map-child ul li a {
+    #sm-view .sm-map-child .ul-1>li div {
         padding: 10px 18px;
         width: 100%;
         height: 100%;
         display: block;
     }
-    #sm-view .map-child ul li a:hover {
+    #sm-view .sm-map-child .ul-1 li a:hover {
         color: #fff;
     }
 
-    #sm-view .map-child li:hover {
-        background: #18c6f8;
+    #sm-view .sm-map-child .ul-2>li {
+        transition: all linear .2s;
+        -webkit-transition: all linear .2s;
+        font-size: 12px;
+        color: #262626;
+        padding: 8px 40px;
+        border-top: 1px solid #ddd;
     }
 
-    #sm-view .map-child-title {
+    #sm-view .sm-map-child-title {
         background-color: #ddf5ff;
         cursor: pointer;
     }
 
-    #sm-view .map-child-title:hover {
+    #sm-view .sm-map-child-title:hover {
         opacity: 0.8;
     }
 
-    #sm-view .map-child-title {
-        padding: 8px;
+    #sm-view .sm-map-child-title {
+        padding: 12px;
     }
 
     #sm-view .sm-search-block {
