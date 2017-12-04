@@ -14,64 +14,71 @@
 
 	<table class="table table-bordered">
 		<tr>	
-			<th>タイトル</th>
+			<th>パーティー名</th>
 			<td><%= f.text_field :title , class: "form-control" %></td>
 		</tr>
 		<tr>
-			<th>開催場所</th>
+			<th>日時</th>
 			<td><%= f.text_field :venue , class: "form-control" %></td>
-		</tr>
-		<tr>
-			<th>最寄駅</th>
-			<td><%= f.select :venue_type, t('parties.venue_type'), value: @party.venue_type %></td>
 		</tr>
 
 		<tr>
-			<th>開催日時</th>
+			<th>会場名</th>
 			<td><%= f.text_field :venue , class: "form-control" %></td>
 		</tr>
 		<tr>
-			<th>最寄駅</th>
-			<td><%= f.select :venue_type, t('parties.venue_type'), value: @party.venue_type %></td>
-		</tr>
-
-		<tr>
-			<th>開催場所の住所</th>
+			<th>場所</th>
 			<td><%= f.text_field :venue_address , class: "form-control" %></td>
 		</tr>
-
 		<tr>
-			<th>県</th>
+			<th>最寄り駅</th>
+			<td><%= f.select :venue_type, t('parties.venue_type'), value: @party.venue_type %></td>
+		</tr>
+		<tr class="contents_duplicated">
+			<th>最寄駅</th>
+			<td><%= f.select :venue_type, t('parties.venue_type'), value: @party.venue_type %></td>
+		</tr>
+
+		<tr class="contents_duplicated">
+			<th>都道府県</th>
 			<td><%= f.text_field :prefecture , class: "form-control" %></td>
 		</tr>
-		<tr>
-			<th>区・市</th>
+		<tr class="contents_duplicated">
+			<th>市区町村</th>
 			<td><%= f.text_field :city , class: "form-control" %></td>
 		</tr>
-
 		<tr>
 			<th>男性料金</th>
-			<td><%= f.text_field :man_fee , class: "form-control" %></td>
-		</tr>
-
-		<tr>
-			<th>女性料金</th>
-			<td><%= f.text_field :women_fee , class: "form-control" %></td>
-		</tr>
-
-		<tr class="age">
-			<th>男性の最高年齢</th>
 			<td>
-				<%= f.text_field :min_age_man , class: "form-control" %> 〜 
-				<%= f.number_field :max_age_man , class: "form-control", min: "20", max:"50" %>
+				<div class="col-xs-5">
+				<%= f.text_field :man_fee , class: "form-control", type: "number", min: "0"  %>
+				</div>
 			</td>
 		</tr>
 
 		<tr>
-			<th>女性の年齢</th>
+			<th>女性料金</th>
 			<td>
-				<%= f.text_field :min_age_women , class: "form-control" %> 〜 
-				<%= f.text_field :max_age_women , class: "form-control" %>
+				<div class="col-xs-5">
+				<%= f.text_field :women_fee , class: "form-control", type: "number", min: "0" %>
+				</div>
+			</td>
+		</tr>
+		<tr class="age">
+			<th>男性年齢</th>
+			<td id="input_age">
+				<%= f.select :min_age_man, t('parties.min_age_man'), value: @party.min_age_man %>
+				〜
+				<%= f.select :max_age_man, t('parties.max_age_man'), value: @party.max_age_man %>
+			</td>
+		</tr>
+
+		<tr>
+			<th>女性年齢</th>
+			<td>
+				<%= f.select :min_age_women, t('parties.min_age_women'), value: @party.min_age_women %>
+				〜
+				<%= f.select :max_age_women, t('parties.max_age_women'), value: @party.max_age_women %>
 			</td>
 		</tr>
 
