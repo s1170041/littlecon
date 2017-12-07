@@ -65,13 +65,5 @@ $(function() {
                 elm.addClass("arrow-right").removeClass("arrow-up");
             }
         }
-
-
-
-
-
-
-
-
     });
 });
