@@ -58,13 +58,6 @@ $(function() {
             addArrow($(this))       
             parent.find(".ul-1").slideToggle();
         });
-
-        $("#sm-view .sm_trg_ul_2").on("click", function(){
-            var parent = $(this).parent();     
-            addArrow($(this))       
-            parent.find(".ul-2").slideToggle();
-        });
-
         function addArrow(elm) {
             if (elm.hasClass("arrow-right")) {
                 elm.addClass("arrow-up").removeClass("arrow-right");
