@@ -48,7 +48,7 @@
     position: relative;
     width: 430px;
     height: 400px;
-    background: url("http://s1170041.wp.xdomain.jp/wp-content/uploads/2017/12/japan_map.jpg") no-repeat center center / 400px 400px;
+    background: url("http://zikuu.wp.xdomain.jp/wp-content/uploads/2017/12/japan_map.jpg") no-repeat center center / 400px 400px;
     margin: 0 auto;
 }
 #pc-view .pc-map-child {
@@ -71,9 +71,6 @@
 }
 #pc-view .pc-map-child ul.ul-1 li {
     position: relative;
-}
-#pc-view .pc-map-child ul.ul-1 li #no-data{
-    color: #aaa;
 }
 
 #pc-view .pc-map-child .ul-1 li>div, #pc-view .pc-map-child .ul-1>li>a {
@@ -127,7 +124,6 @@
     padding: 8px 0;
     display: block;
 }
-
 
 
 
@@ -380,17 +376,27 @@
         width: 100%;
     }
 
+    #sm-view .arrow-right::before, 
     #sm-view .arrow-right::after, 
+    #sm-view .arrow-up::before, 
     #sm-view .arrow-up::after {
         content: "";
         position: absolute;
         transition: all linear .2s;
         -webkit-transition: all linear .2s;
     }
-
+    #sm-view .arrow-right::before,
+    #sm-view .arrow-up::before {
+        top: 12px;
+        right: 12px;
+        width: 16px;
+        height: 16px;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+    }
     #sm-view .arrow-right::after{
-        top: 19px;
-        right: 19px;
+        top: 17px;
+        right: 18px;
         width:  10px;
         height: 10px;
         border-top: 3px solid #fff;
@@ -399,14 +405,14 @@
         transform: rotate(45deg);
     }
     #sm-view .arrow-up::after{
-        top: 17px;
+        top: 18px;
         right: 17px;
         width:  10px;
         height: 10px;
         border-top: 3px solid #fff;
         border-right: 3px solid #fff;
-        -webkit-transform: rotate(135deg);
-        transform: rotate(135deg);
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
     }
 
     #sm-view .sm-map-child {
@@ -414,11 +420,8 @@
     }
 
     #sm-view .sm-map-child .ul-1 {
+        border: 1px solid #ddd;
         cursor: pointer;
-    }
-
-    #sm-view .sm-map-child .ul-1 #no-data {
-        color: #aaa;
     }
 
     #sm-view .sm-map-child .ul-1>li {
@@ -428,21 +431,16 @@
         font-size: 12px;
         color: #262626;
         overflow: hidden;
-        line-height: 50px;
-    }
-
-    #sm-view .sm-map-child .ul-1>li #no-data {
-        color: #aaa;
+        padding-bottom: 10px;
     }
     #sm-view .sm-map-child .ul-1>li div {
-        padding-left: 18px;
+        padding: 10px 0px 0 18px;
         width: 100%;
         height: 100%;
         display: block;
         float: left;
-        width: 90px;
+        width: 72px;
         font-size: 14px;
-        line-height: 50px;
     }
 
     #sm-view .sm-map-child .ul-2 {
@@ -454,12 +452,9 @@
         -webkit-transition: all linear .2s;
         font-size: 12px;
         color: #262626;
-        line-height: 50px;
+        padding: 10px 0 0;
         float: left;
         width: 25%;
-    }
-    #sm-view .sm-map-child .ul-2>li #no-data {
-        color: #aaa;
     }
 
     #sm-view .sm-map-child-title {
@@ -468,17 +463,16 @@
     }
 
     #sm-view .sm-map-child-title:hover {
-        opacity: 0.8;
+        // opacity: 0.8;
     }
 
     #sm-view .sm-map-child-title {
-        line-height: 50px;
-        padding-left: 18px;
+        padding: 12px;
     }
 
     #sm-view .sm-search-block {
         width: 100%;
-        background: url("http://s1170041.wp.xdomain.jp/wp-content/uploads/2017/12/serch_icon_blue.png") no-repeat center top / 32px 32px;
+        background: url("http://zikuu.wp.xdomain.jp/wp-content/uploads/2017/12/serch_icon_blue.png") no-repeat center top / 32px 32px;
         margin-bottom: 18px;
     }
 
