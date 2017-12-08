@@ -411,8 +411,8 @@
         height: 10px;
         border-top: 3px solid #fff;
         border-right: 3px solid #fff;
-        -webkit-transform: rotate(-45deg);
-        transform: rotate(-45deg);
+        -webkit-transform: rotate(135deg);
+        transform: rotate(135deg);
     }
 
     #sm-view .sm-map-child {
@@ -460,10 +460,6 @@
     #sm-view .sm-map-child-title {
         background-color: #ddf5ff;
         cursor: pointer;
-    }
-
-    #sm-view .sm-map-child-title:hover {
-        // opacity: 0.8;
     }
 
     #sm-view .sm-map-child-title {
