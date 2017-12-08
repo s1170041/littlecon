@@ -405,7 +405,7 @@
         transform: rotate(45deg);
     }
     #sm-view .arrow-up::after{
-        top: 18px;
+        top: 16px;
         right: 17px;
         width:  10px;
         height: 10px;
@@ -421,7 +421,6 @@
 
     #sm-view .sm-map-child .ul-1 {
         border: 1px solid #ddd;
-        cursor: pointer;
     }
 
     #sm-view .sm-map-child .ul-1>li {
@@ -431,7 +430,7 @@
         font-size: 12px;
         color: #262626;
         overflow: hidden;
-        padding: 12px 0 12px 12px;
+        padding: 12px 0;
     }
     #sm-view .sm-map-child .ul-1>li div {
         width: 100%;
@@ -440,12 +439,14 @@
         float: left;
         width: 64px;
         font-size: 14px;
-        padding: 12px 0 0 14px;
+        padding-top: 14px;
+        text-align: center;
     }
 
     #sm-view .sm-map-child .ul-2 {
         overflow: hidden;
-        padding: 12px 0 0 14px;
+        padding-top: 14px;
+        padding-right: 8px;
         border-left: 1px dashed #18c6f8;
     }
 
@@ -455,16 +456,14 @@
         font-size: 12px;
         color: #262626;
         float: left;
-        width: 25%;
+        padding-left: 13px;
         padding-bottom: 16px;
     }
     #sm-view .sm-map-child .ul-2 a {
         display: inline-block;
-        padding: 3px;
-        border-radius: 3px;
-        background: #18c6f8;
+        padding: 4px 8px;
+        background: #75D3FF;
         color: #fff;
-
     }
 
     #sm-view .sm-map-child-title {
