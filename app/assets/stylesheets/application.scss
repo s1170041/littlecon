@@ -46,10 +46,10 @@
 		height: 32px;
 		padding: 8px 12px;
 		border-radius: 3px;
-    	background-color: #E8001F;
-    	border: none;
-    	cursor: pointer;
-    	color: #fff;
+		background-color: #E8001F;
+		border: none;
+		cursor: pointer;
+		color: #fff;
 	}
 }
 .button_area {
@@ -63,36 +63,36 @@
 			height: 32px;
 			padding: 8px 12px;
 			border-radius: 3px;
-    		border: none;
-    		cursor: pointer;
-    		color: #fff;
-    		background-color: #E8001F;
+			border: none;
+			cursor: pointer;
+			color: #fff;
+			background-color: #E8001F;
 		}
-}
+	}
 }
 
 //for title style
 h1 {
-    width: 700px;
+	width: 700px;
 	margin: 0 auto;
 	font-size: 30px;
 	color: #E8001F;
 	line-height: 56px;
-    margin-bottom: 20px;
-    padding-left: 30px;
-   	
-    @media (min-width: 768px){
-    	width: 750px;
-    }
+	margin-bottom: 20px;
+	padding-left: 30px;
+	
+	@media (min-width: 768px){
+		width: 750px;
+	}
 }
 
 //forselector
 select {
 	height: 32px;
-    padding: 8px 12px;
-    border-radius: 3px;
-    background-color: #f0f1f2;
-    border: none;
-    cursor: pointer;
-    color: #333
+	padding: 8px 12px;
+	border-radius: 3px;
+	background-color: #f0f1f2;
+	border: none;
+	cursor: pointer;
+	color: #333
 }
