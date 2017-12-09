@@ -1,0 +1,173 @@
+<html>
+<head>
+<style type="text/css">
+	body {
+		font-size: 14px;
+		width: 800px;
+		margin: 20px auto;
+	}
+	h2 {
+		border-bottom: 1px solid;
+	}
+   	.color {
+   		width: 200px;
+   		line-height: 50px;
+   		padding: 12px;
+   	}
+   	.main {
+   		background-color: #B3D4FC;
+   	}
+    .point {
+   		background-color: #429BB2;
+   	}
+   	.sub {
+   		background-color: #FFFBEE;
+   	}
+   	
+   	.font-default {
+   		font-size: 14px;
+   	}
+   	.font-title {
+   		font-size: 18px;
+   	}
+   	.style-h2-title {
+   		position: relative;
+		color: #333333;
+		display: inline-block;
+		margin: 47px 0;
+		text-shadow: 0 0 2px white;
+		font-size: 18px;
+	}
+	.style-h2-title :before {
+		content: "";
+		position: absolute;
+		background: #B3D4FC;
+		width: 100px;
+		height: 100px;
+		border-radius: 50%;
+		top: 50%;
+		left: 25%;
+		-moz-transform: translate(-50%,-50%);
+		-webkit-transform: translate(-50%,-50%);
+		-ms-transform: translate(-50%,-50%);
+		transform: translate(-50%,-50%);
+		z-index: -1;
+	}
+	.style-detail {
+		background-color: #f0f1f2;
+		padding: 16px;
+		font-size: 12px;
+	}
+	.original_button {
+		background-color: #B3D4FC;
+		line-height: 32px;
+		padding: 0 12px;
+		border-radius: 3px;
+		cursor: pointer;
+	}
+	.original_button:hover {
+		background-color: #C2E8FF;
+	}
+	.message-panel {
+		width: 600px;
+		background-color: #429BB2;
+		color: #fff;
+		padding: 16px; 
+	}
+	.original-input {
+		border: 1px solid #cdcdcd;
+		height: 32px;
+		border-radius: 3px;
+	}
+	.original-input:focus {
+		border: 1px solid #C2E8FF;
+	}
+	
+
+</style>
+</head>
+<body>
+	<h1>Design memo for Rivelcon</h1>
+	<br>
+	<h2>Color</h2>
+	<table>
+	<tr>
+		<td><div class="color main">#B3D4FC</div></td>
+		<td>Use for main color</td>
+	</tr>
+	<tr>
+		<td><div class="color point">#429BB2</div></td>
+		<td>Use as a point color like button or something like that</td>
+	</tr>
+	<tr>
+		<td><div class="color sub">#FFFBEE</div></td>
+		<td>Use for sub color like background color</td>
+	</tr>
+	</table>
+	<br>
+	<h2>Font</h2>
+		<p class="font-default">Default: 14px;</p>
+		<p class="font-title">Title: 18px;</p>
+	<br>
+	<h2>Parts</h2>
+		<h3>◆Title</h3>
+			<div class="style-h2-title">
+				<span>Title for the content Title for the content</span>
+			</div>
+		
+		<h3>◆Button</h3>
+			<table>
+				<tr>
+					<td>
+					<button class="original_button">Button</button>
+					</td>
+				</tr>
+				<tr>
+					<td class="style-detail">
+						background-color: #B3D4FC;<br>
+						line-height: 32px;<br>
+						padding: 0 12px;<br>
+						border-radius: 3px;<br>
+						cursor: pointer;<br>
+						<br>
+						:hover {<br>
+							background-color: #C2E8FF;<br>
+						}
+					</td>
+				</tr>
+			</table>
+
+		<h3>◆Message panel</h3>
+			<table>
+				<tr>
+					<div class="message-panel">There are some error occured.There are some error occured.There are some error occured.There are some error occured.There are some error occured.There are some error occured.There are some error occured.</div>
+				</tr>
+				<tr>
+					<td class="style-detail">
+						width: 600px;<br>
+						background-color: #429BB2;<br>
+						color: #fff;<br>
+						padding: 16px;
+					</td>
+				</tr>
+			</table>
+
+		<h3>◆Input</h3>
+			<table>
+				<tr>
+					<input class="original-input"></input>
+				</tr>
+				<tr>
+					<td class="style-detail">
+						border: 1px solid #CDCDCD;<br>
+						height: 32px;<br>
+						border-radius: 3px;<br>
+						<br>
+						:hover {<br>
+							border-color: #C2E8FF;<br>
+						}
+					</td>
+				</tr>
+			</table>
+</body>
+</html>
