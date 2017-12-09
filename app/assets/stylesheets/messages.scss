@@ -6,7 +6,7 @@
 /* リセット */
 #pc-view {
     width: 880px;
-    margin: 0 auto;
+    margin: 0 auto 140px;
 }
 
 #pc-view ul, #sm-view ul {
@@ -480,9 +480,6 @@
         width: 100%;
         background: url("http://zikuu.wp.xdomain.jp/wp-content/uploads/2017/12/serch_icon_blue.png") no-repeat center top / 32px 32px;
         margin-bottom: 18px;
-    }
-
-    #sm-view .sm-search-block {
         text-align: center;
         padding: 48px 0 10px;
         border-bottom: 2px dashed #18c6f8;
