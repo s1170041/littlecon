@@ -25,4 +25,10 @@ Rails.application.routes.draw do
   devise_for :admins
   get 'parties/index'
   root to: "parties#index"
+
+  get  "trainings/training1" => "trainings#training1"
+  get  "trainings/training2" => "trainings#training2"
+  get  "trainings/training3" => "trainings#training3"
+
+
 end

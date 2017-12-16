@@ -1,20 +1,486 @@
-<div id="messages-index">
-	<div class="container">
-		<table class="table table-striped">
-			<thead>
-				<tr>
-					<th>受信日</th>
-					<th>件名</th>
-				</tr>
-			</thead>
-			<tbody>
-				<% @messages.each do |m| %>
-				<tr>
-					<th><%= l(m.updated_at, format: :short) %></th>
-					<td><%= link_to m.subject, controller: "messages", action: "show", id: m.id  %></td>
-				</tr>
-				<% end %>	
-			</tbody>
-		</table>
-	</div>
-</div>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1" />
+	<link rel="shortcut icon" href="https://datumo.me/wp-content/themes/musee/images/favicon.ico.jpg" />
+	<link rel="apple-touch-icon" type="image/png" href="https://datumo.me/wp-content/themes/musee/images/icon.png" />
+	<title>DATUMO | 脱毛に関する情報メディア</title>
+	<meta name="keywords" content="ダツモ,DATUMO,脱毛,キュレーション" />
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<script src="//css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="
+//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- <link rel="stylesheet" href="https://datumo.me/wp-content/themes/musee/css/sanitize.css"> -->
+<!-- <link rel="stylesheet" href="https://datumo.me/wp-content/themes/musee/css/musee.css?20171116044940"> -->
+<link rel="stylesheet" type="text/css" href="//datumo.me/wp-content/cache/wpfc-minified/38bbe3b00d4f553b9e8427f8db298bb3/1510820188index.css" media="all"/>
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-93153328-1', 'auto');
+	ga('send', 'pageview');
+</script>
+<!-- All in One SEO Pack 2.3.11.4 by Michael Torbert of Semper Fi Web Design[370,377] -->
+<meta name="description"  content="DATUMO（ダツモ）は、脱毛に関する情報を掲載しているWebメディアです。脱毛のサロン情報から脱毛のコトまで、幅広くご紹介しています。" />
+<meta name="google-site-verification" content="g4m721kix6QdK7pIQXK0Rjhjx1ypouEBNn0XatGP93g" />
+<link rel='next' href='https://datumo.me/page/2' />
+<link rel="canonical" href="https://datumo.me/" />
+<meta property="og:title" content="DATUMO | 脱毛に関する情報メディア" />
+<meta property="og:url" content="https://datumo.me/" />
+<meta property="og:image" content="https://datumo.me/wp-content/themes/musee/images/icon.png" />
+<meta property="og:site_name" content="DATUMO" />
+<meta property="og:description" content="DATUMO（ダツモ）は、脱毛に関する情報を掲載しているWebメディアです。脱毛のサロン情報から脱毛のコトまで、幅広くご紹介しています。" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="DATUMO | 脱毛に関する情報メディア" />
+<meta name="twitter:description" content="DATUMO（ダツモ）は、脱毛に関する情報を掲載しているWebメディアです。脱毛のサロン情報から脱毛のコトまで、幅広くご紹介しています。" />
+<meta name="twitter:image" content="https://datumo.me/wp-content/themes/musee/images/icon.png" />
+<!-- /all in one seo pack -->
+<link rel='dns-prefetch' href='//s.w.org' />
+<script type="text/javascript">
+	window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/datumo.me\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.7.8"}};
+	!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),!(j.toDataURL().length<3e3)&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,65039,8205,55356,57096),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,55356,57096),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55357,56425,55356,57341,8205,55357,56507),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55357,56425,55356,57341,55357,56507),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<!-- <link rel='stylesheet' id='wordpress-popular-posts-css'  href='https://datumo.me/wp-content/plugins/wordpress-popular-posts/style/wpp.css?ver=3.3.4' type='text/css' media='all' /> -->
+<link rel="stylesheet" type="text/css" href="//datumo.me/wp-content/cache/wpfc-minified/61804780cc29a359e8cd576134b6168c/1502101912index.css" media="all"/>
+<script src='//datumo.me/wp-content/cache/wpfc-minified/4644c62fde849a0ae250869c651e9be0/1512030955index.js' type="text/javascript"></script>
+<!-- <script type='text/javascript' src='https://datumo.me/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script> -->
+<!-- <script type='text/javascript' src='https://datumo.me/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script> -->
+<!-- <script type='text/javascript' src='https://datumo.me/wp-content/plugins/standard-widget-extensions/js/jquery.cookie.js?ver=4.7.8'></script> -->
+<link rel='https://api.w.org/' href='https://datumo.me/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://datumo.me/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://datumo.me/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.7.8" />
+<style type="text/css">
+.hm-swe-resize-message {
+	height: 50%;
+	width: 50%;
+	margin: auto;
+	position: absolute;
+	top: 0; left: 0; bottom: 0; right: 0;
+	z-index: 99999;
+	color: white;
+}
+.hm-swe-modal-background {
+	position: fixed;
+	top: 0; left: 0; 	bottom: 0; right: 0;
+	background: none repeat scroll 0% 0% rgba(0, 0, 0, 0.85);
+	z-index: 99998;
+	display: none;
+}
+h2.article {
+    border-left: 7px solid #e6f7ff;
+    background-color: #fff;
+    font-size: 16px;
+    padding: 0.5em 1em;
+    margin: 1.5em 0 1.5em;
+}
+.bk-japan-map-s {
+    width: 324px;
+    height: 264px;
+    background: url("https://s3-ap-northeast-1.amazonaws.com/s1170041/japan_map_thumb.png") no-repeat center top / 100% 100%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.bk-japan-map-s:hover {
+    opacity: 0.7;
+}
+
+
+</style>
+<link rel='dns-prefetch' href='//i0.wp.com'>
+<link rel='dns-prefetch' href='//i1.wp.com'>
+<link rel='dns-prefetch' href='//i2.wp.com'>
+</head><body id="home">
+	<div id="container">
+		<div class="area">
+			<header id="header">
+				<a href="https://datumo.me/">
+					<p>DATUMO</p>
+				</a>
+				<a href="#" class="search_font"><i class="fa fa-search fa-2x" aria-hidden="true"></i></a>
+				<form method="get" id="search_form" action="https://datumo.me/">
+					<input name="s" type="text" placeholder="探したいキーワードを入力" value="" >
+					<input class="search fontl" type="submit" value="&#xf002;">
+				</form>
+				<div class="clear"></div>
+				<nav class="fonts scroll-bar">
+					<ul>
+						<li class="main"><a href="/category/parts" title="">部位</a></li>
+						<li class="main"><a href="/category/salon" title="">サロン</a></li>
+						<li class="main">
+							<a href="/category/how-to">how to</a>
+
+
+						</li>
+						<li class="main"><a href="/category/comparison" title="">比較</a></li>
+						<li class="main"><a href="/category/place" title="">場所</a></li>
+						<li class="main"><a href="/category/type" title="">種類</a></li>
+						<li class="clear"></li>
+					</ul>
+				</nav>
+
+
+				<div class="sp sp_header">
+					<label for="menu_toggle">
+						<div id="menu_ico">
+						</div>
+					</label>
+					<input type="checkbox" id="menu_toggle" />
+					<div class="sp_nav">
+						<ul class="header_menu">
+							<li>
+								<a href="/category/parts" class="fonts hover">部位</a>
+							</li>
+							<li>
+								<a href="/category/salon" class="fonts hover">サロン</a>
+							</li>
+
+							<li>
+								<a href="/category/how-to" class="fonts hover">how to</a>
+							</li>
+							<li>
+								<a href="/category/comparison" class="fonts hover">比較</a>
+							</li>
+
+							<li>
+								<a href="/category/place" class="fonts hover">場所</a>
+							</li>
+
+							<li>
+								<a href="/category/type" class="fonts hover">種類</a>
+							</li>
+						</ul>
+					</div>
+					<span class="bar bar1"></span>
+					<span class="bar bar2"></span>
+					<span class="bar bar3"></span>
+				</div>
+			</header>      
+			<a href=https://datumo.me/4631 class='block hover'>
+				<div class='pickup_box1'>
+					<img class='cover' src='https://datumo.me/wp-content/themes/musee/images/spacer_pickup.png' style='background-image: url(https://i2.wp.com/datumo.me/wp-content/uploads/2017/09/832.jpg?fit=676%2C451&ssl=1)'>
+					<h2 class='fontll'>コロリー（coloree）10月からの新キャンペーン情報♡</h2>
+					<span>キャンペーン</span>
+				</div>
+			</a>
+			<a href=https://datumo.me/778 class='block hover'>
+				<div class='sp_position'>
+					<div class='pickup_box2'>
+						<img class='cover' src='https://datumo.me/wp-content/themes/musee/images/spacer_pickup.png' style='background-image: url(https://i0.wp.com/datumo.me/wp-content/uploads/2017/10/img_main01_101.png?fit=640%2C510&ssl=1)'>
+						<h2 class='fontll'>ミュゼの新ブランド「コロリー（coloree）」がヤバすぎ！その実態を5つの項目から徹底調査</h2>
+						<span>サロン</span>
+					</div>
+				</div>
+			</a>
+			<a href=https://datumo.me/1818 class='block hover'>
+				<div class='pickup_box3'>
+					<img class='cover' src='https://datumo.me/wp-content/themes/musee/images/spacer_pickup.png' style='background-image: url(https://i2.wp.com/datumo.me/wp-content/uploads/2017/05/01454e983ab5590022a66d6590909816-1.png?fit=676%2C446&ssl=1)'>
+					<h2 class='fontl'>サロン別全身脱毛の範囲を徹底比較！部位数が多いのはどこ？</h2>
+					<span>部位</span>
+				</div>
+			</a>
+			<a href=https://datumo.me/51 class='block hover'>
+				<div class='pickup_box4'>
+					<img class='cover' src='https://datumo.me/wp-content/themes/musee/images/spacer_pickup.png' style='background-image: url(https://i0.wp.com/datumo.me/wp-content/uploads/2017/04/jakob-owens-208999.jpg?fit=676%2C470&ssl=1)'>
+					<h2 class='fontl'>ミュゼプラチナムの料金っていくら？コース別に総まとめ【保存版】</h2>
+					<span>サロン</span>
+				</div>
+			</a>
+			<a href=https://datumo.me/1033 class='block hover'>
+				<div class='pickup_box5'>
+					<img class='cover' src='https://datumo.me/wp-content/themes/musee/images/spacer_pickup.png' style='background-image: url(https://i2.wp.com/datumo.me/wp-content/uploads/2017/04/57eefa12885e9f203abcf30cf920e80c_s.jpg?fit=640%2C427&ssl=1)'>
+					<h2 class='fontl'>全身脱毛の施術時間はどれくらい？脱毛サロン別に徹底比較</h2>
+					<span>比較</span>
+				</div>
+			</a><div class="clear"></div>      <div id="main" class="content_left">
+				<a href='https://datumo.me/5913' class='block hover'>
+					<div class='list_area'>
+						<div class='list_left'>
+							<img class='cover' src='https://datumo.me/wp-content/themes/musee/images/spacer.png' style='background-image: url(https://i2.wp.com/datumo.me/wp-content/uploads/2017/12/anthony-tran-378336.jpg?fit=676%2C451&ssl=1)'>
+							<span class='fontss'>場所</span>
+						</div>
+						<div class='list_right'>
+							<h3 class='fontm'>コロリーなんば店は難波駅から徒歩4分で便利！店舗情報から口コミまで徹底調査</h3>
+							<p class='fontss'>ミナミに出かけ際、お買い物のついでや仕事や学校帰りなどのついでにサクッと脱毛ができたら理想的ですよね。そこでおすすめしたいのが、コロリー「なんば店」！今回の記事では店舗情報や詳しいアクセス、口コミから予約方法まで紹介いたします！</p>
+						</div>
+						<div class='clear'></div>
+					</div>
+				</a><a href='https://datumo.me/5911' class='block hover'>
+					<div class='list_area'>
+						<div class='list_left'>
+							<img class='cover' src='https://datumo.me/wp-content/themes/musee/images/spacer.png' style='background-image: url(https://i0.wp.com/datumo.me/wp-content/uploads/2017/12/atikh-bana-113633.jpg?fit=676%2C451&ssl=1)'>
+							<span class='fontss'>場所</span>
+						</div>
+						<div class='list_right'>
+							<h3 class='fontm'>コロリー京橋店は全身脱毛がお得！店舗情報・詳しいアクセス・口コミまとめ</h3>
+							<p class='fontss'>大阪京橋付近で脱毛サロンをお探しの方におすすめしたいのが、コロリー「京橋店」です。コロリー京橋店は、低価格で全身脱毛が可能！<br />
+							今回は、コロリー京橋店の魅力を徹底調査！店舗情報や詳しいアクセス、口コミから予約方法まで紹介します。</p>
+						</div>
+						<div class='clear'></div>
+					</div>
+				</a><a href='https://datumo.me/5909' class='block hover'>
+					<div class='list_area'>
+						<div class='list_left'>
+							<img class='cover' src='https://datumo.me/wp-content/themes/musee/images/spacer.png' style='background-image: url(https://i0.wp.com/datumo.me/wp-content/uploads/2017/12/imani-clovis-23005-1.jpg?fit=676%2C451&ssl=1)'>
+							<span class='fontss'>場所</span>
+						</div>
+						<div class='list_right'>
+							<h3 class='fontm'>船橋のコロリーは2つあって予約が取りやすい！アクセスや店舗情報・口コミ総まとめ</h3>
+							<p class='fontss'>脱毛サロンに通うなら、ちゃんと定期的に通いたいですよね。そこで船橋市で脱毛サロンを探している方におすすめしたいのが「コロリー」です。そこで今回は、コロリー「船橋店」、「津田沼駅前店」の店舗情報や詳しいアクセス、口コミなどを徹底調査しました！</p>
+						</div>
+						<div class='clear'></div>
+					</div>
+				</a><a href='https://datumo.me/959' class='block hover'>
+					<div class='list_area'>
+						<div class='list_left'>
+							<img class='cover' src='https://datumo.me/wp-content/themes/musee/images/spacer.png' style='background-image: url(https://i0.wp.com/datumo.me/wp-content/uploads/2017/04/pete-bellis-403583.jpg?fit=676%2C449&ssl=1)'>
+							<span class='fontss'>場所</span>
+						</div>
+						<div class='list_right'>
+							<h3 class='fontm'>渋谷にはコロリーが2つあって便利！店舗情報・アクセス・口コミ徹底調査！</h3>
+							<p class='fontss'>渋谷に新しくできた全身脱毛のサロンが格安との噂を聞いたので早速調査してみた。コースは1コースのみ。立地は？価格は？脱毛部位は？本当に安いのか他のサロンと比較してみました。</p>
+						</div>
+						<div class='clear'></div>
+					</div>
+				</a><a href='https://datumo.me/2813' class='block hover'>
+					<div class='list_area'>
+						<div class='list_left'>
+							<img class='cover' src='https://datumo.me/wp-content/themes/musee/images/spacer.png' style='background-image: url(https://i0.wp.com/datumo.me/wp-content/uploads/2017/06/pretty-woman-635245_640.jpg?fit=640%2C426&ssl=1)'>
+							<span class='fontss'>場所</span>
+						</div>
+						<div class='list_right'>
+							<h3 class='fontm'>コロリー銀座本店は駅近で便利！店舗情報から口コミまで徹底調査！</h3>
+							<p class='fontss'>「ギンザシックス(GINZA SIX)」や「マロニエゲート銀座2＆3」がオープンした東京・銀座。ムダ毛の悩みはショッピングの合間や仕事帰りに効率よく解決♡コスパが良いと話題の全身脱毛サロン「コロリー(colorée)」に行ってみよう！</p>
+						</div>
+						<div class='clear'></div>
+					</div>
+				</a><a href='https://datumo.me/1726' class='block hover'>
+					<div class='list_area'>
+						<div class='list_left'>
+							<img class='cover' src='https://datumo.me/wp-content/themes/musee/images/spacer.png' style='background-image: url(https://i1.wp.com/datumo.me/wp-content/uploads/2017/05/tago06b.jpg?fit=676%2C451&ssl=1)'>
+							<span class='fontss'>場所</span>
+						</div>
+						<div class='list_right'>
+							<h3 class='fontm'>コロリー静岡店は安いのに脱毛効果抜群！詳しい店舗案内・口コミなど徹底調査</h3>
+							<p class='fontss'>脱毛サロンとして有名なあの『ミュゼプラチナム』から、新しくデビューした新ブランド『コロリー（coloree）』は、全身脱毛に特化したサロンとして誕生しました。静岡には2店舗あります！ 空き状況によって使い分けができるので便利ですよ。</p>
+						</div>
+						<div class='clear'></div>
+					</div>
+				</a><a href='https://datumo.me/1887' class='block hover'>
+					<div class='list_area'>
+						<div class='list_left'>
+							<img class='cover' src='https://datumo.me/wp-content/themes/musee/images/spacer.png' style='background-image: url(https://i2.wp.com/datumo.me/wp-content/uploads/2017/05/toa-heftiba-205003.jpg?fit=676%2C451&ssl=1)'>
+							<span class='fontss'>場所</span>
+						</div>
+						<div class='list_right'>
+							<h3 class='fontm'>名古屋にはコロリーが2つあってお得?!店舗情報から口コミまで徹底調査！</h3>
+							<p class='fontss'>夏はもう目前！　露出が増えるので腕や脚はもちろん、かわいい水着や下着のためにVIOだって必須なので、全身脱毛ですっきりさせるのがおすすめ。全身脱毛専門サロン『コロリー（coloree）』名古屋エリアの店舗について紹介します。</p>
+						</div>
+						<div class='clear'></div>
+					</div>
+				</a><a href='https://datumo.me/4038' class='block hover'>
+					<div class='list_area'>
+						<div class='list_left'>
+							<img class='cover' src='https://datumo.me/wp-content/themes/musee/images/spacer.png' style='background-image: url(https://i0.wp.com/datumo.me/wp-content/uploads/2017/10/melan-cholia-277731.jpg?fit=676%2C449&ssl=1)'>
+							<span class='fontss'>キャンペーン</span>
+						</div>
+						<div class='list_right'>
+							<h3 class='fontm'>ミュゼプラチナムの新キャンペーン！12月は全身脱毛が500円！【web予約限定】</h3>
+							<p class='fontss'>あのミュゼプラチナムがお得なキャンペーンを開始！<br />
+							気になるキャンペーン情報をチェック！</p>
+						</div>
+						<div class='clear'></div>
+					</div>
+				</a><a href='https://datumo.me/1121' class='block hover'>
+					<div class='list_area'>
+						<div class='list_left'>
+							<img class='cover' src='https://datumo.me/wp-content/themes/musee/images/spacer.png' style='background-image: url(https://i2.wp.com/datumo.me/wp-content/uploads/2017/04/bence-boros-343468.jpg?fit=676%2C451&ssl=1)'>
+							<span class='fontss'>サロン</span>
+						</div>
+						<div class='list_right'>
+							<h3 class='fontm'>コロリーは予約が取りやすい！キャンセル料もなしって本当？ 徹底検証してみた</h3>
+							<p class='fontss'>コロリー（coloree）は2017年4月からスタートしたばかりの新しい美容脱毛専用サロンです!お客様の声にお応えして当日の予約やキャンセルにもすぐに対応してくれるとのこと。果たして実際はどうなのか、検証してみました!!</p>
+						</div>
+						<div class='clear'></div>
+					</div>
+				</a><a href='https://datumo.me/2036' class='block hover'>
+					<div class='list_area'>
+						<div class='list_left'>
+							<img class='cover' src='https://datumo.me/wp-content/themes/musee/images/spacer.png' style='background-image: url(https://i0.wp.com/datumo.me/wp-content/uploads/2017/11/kira-ikonnikova-111064.jpg?fit=676%2C451&ssl=1)'>
+							<span class='fontss'>場所</span>
+						</div>
+						<div class='list_right'>
+							<h3 class='fontm'>福島にあるコロリー「ホテルプリシード郡山店」の全身脱毛がとってもお得！</h3>
+							<p class='fontss'>コロリー（coloree）は2017年4月から新たにスタートしたばかりの全身脱毛専用美容脱毛サロンです。今かなり注目されているコロリー（coloree）の郡山（福島県）店についてどこよりも詳しくまとめてみました!!</p>
+						</div>
+						<div class='clear'></div>
+					</div>
+				</a><div class="yutopro_pagenavi">
+					<span class="current">1</span><a href="https://datumo.me/page/2">2</a><a href="https://datumo.me/page/3">3</a><a href="https://datumo.me/page/4">4</a><a href="https://datumo.me/page/5">5</a><a href="https://datumo.me/page/2" class="next"><i class="fa fa-angle-right" aria-hidden="true"></i>
+					</a><a href="https://datumo.me/page/15"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a></div><!-- pagination -->
+				</div><!-- content_left -->
+				<div class="clear sp"></div>
+				<div class="content_right">
+					<div class="keyword">
+						<h2 class="bar article">人気のキーワード</h2>
+						<div class="content_tag fontss">
+							<a href="https://datumo.me/tag/ミュゼ" class="tag"><i class="fa fa-tag"></i>ミュゼ</a>
+							<a href="https://datumo.me/tag/全身脱毛" class="tag"><i class="fa fa-tag"></i>全身脱毛</a>
+							<a href="https://datumo.me/tag/医療脱毛" class="tag"><i class="fa fa-tag"></i>医療脱毛</a>
+							<a href="https://datumo.me/tag/選び方" class="tag"><i class="fa fa-tag"></i>選び方</a>
+							<a href="https://datumo.me/tag/キレイモ" class="tag"><i class="fa fa-tag"></i>キレイモ</a>
+							<a href="https://datumo.me/tag/料金比較" class="tag"><i class="fa fa-tag"></i>料金比較</a>
+							<a href="https://datumo.me/tag/Vライン" class="tag"><i class="fa fa-tag"></i>Vライン</a>
+							<a href="https://datumo.me/tag/安い" class="tag"><i class="fa fa-tag"></i>安い</a>
+							<a href="https://datumo.me/tag/光脱毛" class="tag"><i class="fa fa-tag"></i>光脱毛</a>
+						</div>
+					</div>
+
+					<h2 class="bar article" style="margin-bottom: 5px">店舗検索</h2>
+					<div class="bk-japan-map-s"></div>
+
+
+
+					<div class="popular2">
+						<h2 class="bar article">総合人気ランキング</h2>
+						<a href="/778" class='block hover'>
+							<div class='list_area'>
+								<div class='list_left'>
+									<img src="https://datumo.me/wp-content/themes/musee/images/spacer_pickup.png?20170312024431" style="background-image: url(https://i0.wp.com/datumo.me/wp-content/uploads/2017/10/img_main01_101.png?fit=640%2C510&ssl=1)" class="cover">
+								</div>
+								<div class='list_right'>
+									<h3 class="fonts hover">ミュゼの新ブランド「コロリー（coloree）」がヤバすぎ！その実態を5つの項目から徹底調査</h3>
+								</div>
+								<div class='clear'></div>
+							</div>
+						</a>
+						<a href="/51" class='block hover'>
+							<div class='list_area'>
+								<div class='list_left'>
+									<img src="https://datumo.me/wp-content/themes/musee/images/spacer_pickup.png?20170312024431" style="background-image: url(https://i0.wp.com/datumo.me/wp-content/uploads/2017/04/jakob-owens-208999.jpg?fit=676%2C470&ssl=1)" class="cover">
+								</div>
+								<div class='list_right'>
+									<h3 class="fonts hover">ミュゼプラチナムの料金っていくら？コース別に総まとめ【保存版】</h3>
+								</div>
+								<div class='clear'></div>
+							</div>
+						</a>
+						<a href="/55" class='block hover'>
+							<div class='list_area'>
+								<div class='list_left'>
+									<img src="https://datumo.me/wp-content/themes/musee/images/spacer_pickup.png?20170312024431" style="background-image: url(https://i0.wp.com/datumo.me/wp-content/uploads/2017/03/pexels-photo-324574.jpeg?fit=676%2C451&ssl=1)" class="cover">
+								</div>
+								<div class='list_right'>
+									<h3 class="fonts hover">脇を脱毛ならミュゼプラチナムがおすすめ！必要な回数や口コミを徹底検証しました</h3>
+								</div>
+								<div class='clear'></div>
+							</div>
+						</a>
+						<a href="/53" class='block hover'>
+							<div class='list_area'>
+								<div class='list_left'>
+									<img src="https://datumo.me/wp-content/themes/musee/images/spacer_pickup.png?20170312024431" style="background-image: url(https://i1.wp.com/datumo.me/wp-content/uploads/2017/05/IMG_2193.jpg?fit=676%2C450&ssl=1)" class="cover">
+								</div>
+								<div class='list_right'>
+									<h3 class="fonts hover">2017年最新版｜ミュゼプラチナムの全身脱毛の料金・効果・口コミまで徹底調査</h3>
+								</div>
+								<div class='clear'></div>
+							</div>
+						</a>
+						<a href="/188" class='block hover'>
+							<div class='list_area'>
+								<div class='list_left'>
+									<img src="https://datumo.me/wp-content/themes/musee/images/spacer_pickup.png?20170312024431" style="background-image: url(https://i1.wp.com/datumo.me/wp-content/uploads/2017/03/large-80-1.jpg?fit=500%2C339&ssl=1)" class="cover">
+								</div>
+								<div class='list_right'>
+									<h3 class="fonts hover">比較した結果、脱毛するならやっぱりミュゼでした！業界最大手サロンで脱毛体験を</h3>
+								</div>
+								<div class='clear'></div>
+							</div>
+						</a>
+					</div>
+					<div id="side">
+						<div class="datumo_ad">
+							<a href="https://datumo.me/4038" target="_blank"  rel="nofollow">
+								<img src="https://i2.wp.com/datumo.me/wp-content/uploads/2017/06/ad.jpg?fit=310%2C90&ssl=1">
+								<span>12月のミュゼは、全身脱毛が500円⁈</span>
+							</a>
+						</div>
+						<div class="datumo_ad">
+							<a href="https://track.affiliate-b.com/visit.php?guid=ON&amp;a=V7221w-A294364n&amp;p=t545936a" target="_blank"  rel="nofollow">
+								<img src="https://i2.wp.com/datumo.me/wp-content/uploads/2017/06/ad2.jpg?fit=310%2C90&ssl=1">
+								<span>全身脱毛4回分が今なら無料？！</span>
+							</a>
+						</div>
+						<div class="datumo_ad">
+							<a href="https://track.affiliate-b.com/visit.php?guid=ON&a=N6315q-S2822879&p=t545936a" target="_blank"  rel="nofollow">
+								<img src="https://i1.wp.com/datumo.me/wp-content/uploads/2017/06/ad3.jpg?fit=310%2C90&ssl=1">
+								<span>キレイモの「のりかえ割り」とは？</span>
+							</a>
+						</div>
+						<div class="datumo_ad">
+							<a href="https://track.affiliate-b.com/visit.php?guid=ON&amp;a=i2595j-d95060z&amp;p=t545936a" target="_blank"  rel="nofollow">
+								<img src="https://i0.wp.com/datumo.me/wp-content/uploads/2017/06/ad4.jpg?fit=310%2C90&ssl=1">
+								<span>月額6,200円で全身脱毛し放題！</span>
+							</a>
+						</div>
+						<div class="datumo_ad">
+							<a href="https://track.affiliate-b.com/visit.php?guid=ON&a=v44676-P1290691&p=t545936a" target="_blank"  rel="nofollow">
+								<img src="https://i0.wp.com/datumo.me/wp-content/uploads/2017/06/ad5.jpg?fit=310%2C90&ssl=1">
+								<span>医療脱毛が2ヵ月0円！</span>
+							</a>
+						</div>
+					</div>      
+				</div><!-- content_right -->
+				<div class="clear"></div>
+			</div><!-- area -->
+			<footer id="footer">
+				<div class="footer_box">
+					<ul class="fontss">
+						<li><a href="https://datumo.me/about">DATUMOとは</a></li>
+						<li><a href="https://datumo.me/yakuji">薬事に関して</a></li>
+						<li><a href="https://datumo.me/company">運営者情報</a></li>
+						<li><a href="https://datumo.me/adinfo">広告掲載について</a></li>
+						<li><a href="https://datumo.me/contact">お問い合わせ</a></li>
+						<li><a href="https://datumo.me/privacy">個人情報保護に関して</a></li>
+					</ul>
+				</div>
+				<div class="clear"></div>
+				<p class="fontss">Copyright © DATUMO All Rights Reserved.</p>
+			</footer>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+			<script src="https://datumo.me/wp-content/themes/musee/js/common.js?20171122060722"></script>
+			<script src="https://datumo.me/wp-content/themes/musee/js/footer.js"></script>
+			<script type='text/javascript' src='https://datumo.me/wp-content/plugins/jetpack/modules/photon/photon.js?ver=20130122'></script>
+			<script type='text/javascript' src='https://datumo.me/wp-content/plugins/contact-form-7/includes/js/jquery.form.min.js?ver=3.51.0-2014.06.20'></script>
+			<script type='text/javascript'>
+				var _wpcf7 = {"recaptcha":{"messages":{"empty":"\u3042\u306a\u305f\u304c\u30ed\u30dc\u30c3\u30c8\u3067\u306f\u306a\u3044\u3053\u3068\u3092\u8a3c\u660e\u3057\u3066\u304f\u3060\u3055\u3044\u3002"}}};
+			</script>
+			<script type='text/javascript' src='https://datumo.me/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=4.7'></script>
+			<script type='text/javascript'>
+				var swe = {"buttonplusurl":"url(https:\/\/datumo.me\/wp-content\/plugins\/standard-widget-extensions\/images\/plus.gif)","buttonminusurl":"url(https:\/\/datumo.me\/wp-content\/plugins\/standard-widget-extensions\/images\/minus.gif)","maincol_id":"main","sidebar_id":"side","widget_class":"widget","readable_js":"","heading_marker":"1","scroll_stop":"1","accordion_widget":"","single_expansion":"","initially_collapsed":"1","heading_string":"h3","proportional_sidebar":"0","disable_iflt":"620","accordion_widget_areas":[""],"scroll_mode":"1","ignore_footer":"","custom_selectors":["#side .widget"],"slide_duration":"400","recalc_after":"5","recalc_count":"2","header_space":"0","enable_reload_me":"0","float_attr_check_mode":"","sidebar_id2":"","proportional_sidebar2":"0","disable_iflt2":"0","float_attr_check_mode2":"","msg_reload_me":"\u898b\u3084\u3059\u3044\u30ec\u30a4\u30a2\u30a6\u30c8\u3092\u4fdd\u3064\u305f\u3081\u306b\u30da\u30fc\u30b8\u3092\u518d\u30ed\u30fc\u30c9\u3057\u3066\u3044\u305f\u3060\u3051\u307e\u3059\u304b\uff1f","msg_reload":"\u518d\u30ed\u30fc\u30c9\u3059\u308b","msg_continue":"\u518d\u30ed\u30fc\u30c9\u305b\u305a\u306b\u7d9a\u884c"};
+			</script>
+			<script type='text/javascript' src='https://datumo.me/wp-content/plugins/standard-widget-extensions/js/standard-widget-extensions.min.js?ver=4.7.8'></script>
+			<script type='text/javascript' src='https://datumo.me/wp-includes/js/wp-embed.min.js?ver=4.7.8'></script>
+		</div><!-- container -->
+	</body>
+</html><!-- WP Fastest Cache file was created in 0.17769598960876 seconds, on 13-12-17 21:33:30 -->

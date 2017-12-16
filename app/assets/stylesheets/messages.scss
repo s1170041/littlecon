@@ -3,10 +3,29 @@
     clear: both;
 }
 
+h2.article {
+    border-left: 7px solid #e6f7ff;
+    background-color: #fff;
+    font-size: 16px;
+    padding: 0.5em 1em;
+    margin: 1.5em 0 1.5em;
+}
+.bk-japan-map-s {
+    width: 259px;
+    height: 208px;
+    background: url("https://s3-ap-northeast-1.amazonaws.com/s1170041/japan_map_thumb.png") no-repeat center top / 100% 100%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.bk-japan-map-s:hover {
+    opacity: 0.7;
+}
+
 /* リセット */
 #pc-view {
     width: 880px;
-    margin: 0 auto 140px;
+    margin: 0 auto 20px;
 }
 
 #pc-view ul, #sm-view ul {
@@ -169,8 +188,8 @@
 
 /* 関東 */
 #pc-view .bk-japan-map #kanto {
-    top: 66%;
-    left: 76%;
+    top:  57%;
+    left: 84%;
 }
 #pc-view #kanto:hover, #pc-view #kanto .ul-2 {
     border: 1px solid #03CF9C;
@@ -484,6 +503,7 @@
         padding: 48px 0 10px;
         border-bottom: 2px dashed #18c6f8;
         font-size: 13px;
+        margin-top: 35px;
     }
 }
 
